@@ -1,50 +1,59 @@
 # Panduan Perubahan Portofolio (Lokasi Kode)
 
-Dokumen ini berisi daftar lokasi baris kode di `src/App.tsx` dan `src/index.css` untuk memudahkan Anda melakukan personalisasi.
+Dokumen ini berisi daftar lokasi baris kode di `src/Home.tsx`, `src/data.ts`, `src/ProjectDetail.tsx`, dan `src/index.css` untuk memudahkan Anda melakukan personalisasi.
 
 ---
 
-### 📂 1. Identitas & Branding (`src/App.tsx`)
-Bagian ini mengatur siapa pemilik portofolio ini.
+### 📂 1. Identitas & Branding (`src/Home.tsx`)
+Bagian ini mengatur siapa pemilik portofolio ini di halaman utama.
 
 | Komponen | Baris (Lini) | Keterangan |
 | :--- | :--- | :--- |
-| **Nama Utama (Hero)** | 171 - 173 | Ubah `PORTOFOLIO` dan `Nama Anda`. |
-| **Tagline Hero** | 169 | Teks kecil di atas nama (contoh: `PPG PRAJABATAN`). |
-| **Deskripsi Hero** | 175 - 177 | Paragraf pengantar di bawah nama Anda. |
-| **Logo (E-Portfolio)** | 109 | Teks logo di pojok kiri atas. |
-| **Label Tahun** | 110 | Teks `Creative Profile 2026`. |
-| **Current Focus Card** | 202 - 204 | Kartu kecil yang melayang di dekat foto. |
+| **Nama Utama (Hero)** | 124 - 128 | Ubah `PORTOFOLIO` dan `Nama Anda`. |
+| **Deskripsi Hero** | 129 - 131 | Paragraf pengantar di bawah nama Anda. |
+| **Logo (E-Portfolio)** | 63 | Teks logo di pojok kiri atas. |
+| **Label Tahun** | 64 | Teks `Creative Profile 2026`. |
+| **Foto Profil** | 157 | Ganti URL di dalam `src="..."`. |
 
 ---
 
-### 🎨 2. Konten Utama & Data (`src/App.tsx`)
-Bagian ini adalah data yang ditampilkan di berbagai section.
+### 🎨 2. Data Proyek & Karya (`src/data.ts`)
+Sekarang semua data proyek dipusatkan di satu file agar lebih mudah dikelola.
 
-- **Showcase Karya (`showcaseData`)**: Baris **16 - 65**.
+- **Data Karya (`showcaseData`)**: Edit file ini untuk mengubah isi kartu proyek dan halaman detail.
+    - `id`: ID unik proyek (jangan ada yang sama).
     - `title`: Judul proyek.
-    - `meta`: Kategori (misal: "Media", "Rencana").
-    - `summary`: Penjelasan singkat.
-    - `bullets`: Poin-poin detail karya.
-    - `image`: Link foto karya.
-- **Statistik Angka**: Baris **222 - 226**. Ubah `label`, `value`, dan `desc`.
-- **Profil Singkat**: Baris **253 - 261**. Ubah deskripsi diri dan kutipan (quote).
-- **Gaya Kerja (Icons)**: Baris **275 - 291**. Ubah judul seperti `Desain Visual` atau `Interaktif`.
-- **Timeline Perjalanan**: Baris **309 - 313**. Ubah tiap tahapan (`Tahap 01` s/d `Tahap 04`).
+    - `meta`: Kategori (misal: "Media", "Perencanaan").
+    - `summary`: Penjelasan singkat untuk kartu.
+    - `fullDescription`: Deskripsi lengkap untuk halaman detail.
+    - `bullets`: Poin-poin detail pengerjaan.
+    - `tech`: Daftar teknologi yang digunakan (array).
+    - `image`: Link foto proyek.
+    - `duration`: Lama pengerjaan.
+    - `role`: Peran Anda dalam proyek.
 
 ---
 
-### 🔗 3. Link & Media (`src/App.tsx`)
+### 📄 3. Template Detail Proyek (`src/ProjectDetail.tsx`)
+Jika Anda ingin mengubah tampilan tata letak (layout) halaman detail untuk semua proyek.
+
+- **Navigasi Atas**: Baris **21 - 42**. Mengatur tombol kembali dan label kategori.
+- **Header Detail**: Baris **48 - 72**. Mengatur judul besar dan pengantar.
+- **Grid Info Proyek**: Baris **89 - 123**. Mengatur kartu Peran, Durasi, dan Teknologi.
+- **Section Konten**: Baris **126 - 183**. Mengatur tata letak teks dan gambar tambahan.
+
+---
+
+### 🔗 4. Kontak & Media Sosial (`src/Home.tsx`)
 Pastikan semua tombol mengarah ke akun Anda yang benar.
 
-- **Foto Profil**: Baris **209**. Ganti URL di dalam `src="..."`.
-- **Email**: Baris **414** (Link `mailto:`) dan Baris **419** (Teks tampilan).
-- **WhatsApp**: Baris **427**. Gunakan format `https://wa.me/628...` pada atribut `href`.
-- **Menu Navigasi**: Baris **116** dan **145**.
+- **Email**: Baris **375** (Link `mailto:`) dan Baris **380** (Teks tampilan).
+- **WhatsApp**: Baris **383**. Gunakan format `https://wa.me/628...` pada atribut `href`.
+- **Navigasi Menu**: Baris **70 - 79** (Desktop) dan Baris **92 - 109** (Mobile).
 
 ---
 
-### 🌈 4. Visual, Warna & Font (`src/index.css`)
+### 🌈 5. Visual, Warna & Font (`src/index.css`)
 Untuk mengubah tema warna global.
 
 - **Warna Tema (`@theme`)**: Baris **4 - 7**.
@@ -55,10 +64,10 @@ Untuk mengubah tema warna global.
 
 ---
 
-### 🌍 5. Pengaturan Browser (`index.html`)
+### 🌍 6. Pengaturan Browser (`index.html`)
 - **Judul Tab**: Cari tag `<title>` di bagian `<head>`.
 - **Favicon**: Cari tag `<link rel="icon" ...>`.
 
 ---
 
-*Terakhir diperbarui: 4 Mei 2026*
+*Terakhir diperbarui: 6 Mei 2026 (Update: Dynamic Routing & Detail Pages)*
