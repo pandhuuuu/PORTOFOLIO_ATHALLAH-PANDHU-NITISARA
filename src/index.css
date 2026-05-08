@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand: #2530f5;
-  --color-brand-deep: #151c9b;
-  --color-accent: #cbff9c;
-  --color-accent-strong: #8effe7;
+  --color-brand: #3b82f6;
+  --color-brand-deep: #1e3a8a;
+  --color-accent: #00f2ff;
+  --color-accent-strong: #7000ff;
   
   --font-display: "Space Grotesk", sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
@@ -14,19 +14,16 @@
 
 @layer base {
   :root {
-    --bg: #2530f5;
-    --bg-deep: #151c9b;
-    --bg-night: #0c105c;
+    --bg: #000000;
+    --bg-deep: #020617;
+    --bg-night: #000000;
     --text: #f7f8ff;
-    --muted: #d2d6ff;
+    --muted: #94a3b8;
   }
 
   body {
-    @apply m-0 font-display text-[#f7f8ff] min-h-screen overflow-x-hidden bg-[#0c105c];
-    background:
-      radial-gradient(circle at 10% 20%, rgba(142, 255, 231, 0.16), transparent 20rem),
-      radial-gradient(circle at 90% 15%, rgba(203, 255, 156, 0.18), transparent 22rem),
-      linear-gradient(135deg, #0c105c 0%, #2530f5 34%, #3041ff 60%, #151c9b 100%);
+    @apply m-0 font-display text-[#f7f8ff] min-h-screen overflow-x-hidden bg-black;
+    background: #000000;
   }
 }
 

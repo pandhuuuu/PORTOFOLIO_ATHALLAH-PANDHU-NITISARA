@@ -12,16 +12,95 @@ import {
   ExternalLink,
   Code,
   Layout,
-  Zap
+  Zap,
+  CheckCircle2
 } from 'lucide-react';
 
 
 
-const Counter = ({ target }: { target: number }) => {
-  return <span>{target}</span>;
+const DynamicBackground = () => {
+  return (
+    <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
+      {/* Primary Aurora Blob */}
+      <motion.div
+        animate={{
+          x: [0, 100, -50, 0],
+          y: [0, -50, 50, 0],
+          scale: [1, 1.2, 0.9, 1],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "linear"
+        }}
+        className="absolute -top-[10%] -left-[10%] w-[50%] h-[50%] bg-accent/20 blur-[120px] rounded-full"
+      />
+
+      {/* Secondary Aurora Blob */}
+      <motion.div
+        animate={{
+          x: [0, -100, 50, 0],
+          y: [0, 100, -50, 0],
+          scale: [1, 1.1, 1.2, 1],
+        }}
+        transition={{
+          duration: 25,
+          repeat: Infinity,
+          ease: "linear"
+        }}
+        className="absolute -bottom-[10%] -right-[10%] w-[60%] h-[60%] bg-accent-strong/10 blur-[150px] rounded-full"
+      />
+
+      {/* Subtle Center Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-gradient-radial from-brand-deep/5 to-transparent opacity-50" />
+
+      {/* Noise Texture Overlay */}
+      <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+    </div>
+  );
+};
+
+const IntroLoader = ({ onComplete }: { onComplete: () => void }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 1 }}
+      exit={{
+        y: "-100%",
+        transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] }
+      }}
+      className="fixed inset-0 z-[200] bg-black flex flex-col items-center justify-center overflow-hidden"
+    >
+      <div className="relative">
+        <motion.h1
+          initial={{ opacity: 0, letterSpacing: "1em", filter: "blur(10px)" }}
+          animate={{ opacity: 1, letterSpacing: "0.2em", filter: "blur(0px)" }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="text-4xl md:text-6xl font-black text-white tracking-tighter text-center"
+        >
+          HELLO, I'M PANDHU
+        </motion.h1>
+        <motion.div
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 1.5, delay: 0.5, ease: "easeInOut" }}
+          className="absolute -bottom-4 left-0 right-0 h-1 bg-accent origin-left"
+        />
+      </div>
+
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1, duration: 0.8 }}
+        className="mt-12 font-mono text-[10px] uppercase tracking-[0.5em] text-white/40"
+      >
+        Initializing Portofolio...
+      </motion.p>
+    </motion.div>
+  );
 };
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
   const [activeShowcase, setActiveShowcase] = useState(0);
   const [selectedProject, setSelectedProject] = useState<any>(null);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -37,12 +116,25 @@ export default function Home() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } }
   };
 
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="relative min-h-screen custom-scrollbar">
+    <div className="relative min-h-screen custom-scrollbar bg-black selection:bg-accent selection:text-black">
+      <AnimatePresence mode="wait">
+        {isLoading && <IntroLoader onComplete={() => setIsLoading(false)} />}
+      </AnimatePresence>
+
       {/* Diagnostic - will show if App renders at all */}
       <div className="sr-only">App Loaded</div>
 
-      <div className="page-grid" />
+      <DynamicBackground />
+      <div className="page-grid opacity-30" />
 
       {/* Scroll Progress */}
       <motion.div
@@ -51,7 +143,7 @@ export default function Home() {
       />
 
       {/* Header */}
-      <header className="sticky top-0 z-50 py-6 px-4 md:px-8 bg-[#131c91]/30 backdrop-blur-xl border-b border-white/10">
+      <header className="sticky top-0 z-50 py-6 px-4 md:px-8 bg-black/20 backdrop-blur-xl border-b border-white/5">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <a href="#" className="flex items-center gap-4">
             <div className="grid gap-1">
@@ -60,8 +152,7 @@ export default function Home() {
               <div className="w-2.5 h-1 bg-gradient-to-r from-accent-strong to-white rounded-full" />
             </div>
             <div>
-              <strong className="block text-sm font-bold tracking-tight">Portfolio Athallah Pandhu Nitisara</strong>
-              <small className="text-[10px] text-muted uppercase tracking-widest">Creative Profile 2026</small>
+              <strong className="block text-sm font-bold tracking-tight">PANDHU</strong>
             </div>
           </a>
 
@@ -120,21 +211,19 @@ export default function Home() {
               viewport={{ once: true }}
               variants={revealVariants}
             >
-              <h1 className="text-3xl md:text-5xl font-bold leading-[0.9] tracking-tighter mb-6">
-                PORTOFOLIO <br />
-
-                <span className="block mb-10"> </span>
-                <span className="text-accent underline decoration-accent/30">Athallah Pandhu Nitisara</span>
+              <h1 className="font-bold leading-[1.1] tracking-tighter mb-12">
+                <span className="text-lg md:text-xl block text-white/40 mb-4 font-mono uppercase tracking-[0.3em]">HELLO, I'M</span>
+                <span className="text-4xl md:text-7xl text-accent underline decoration-accent/20 block">
+                  Athallah <br />
+                  Pandhu Nitisara
+                </span>
               </h1>
-              <p className="text-muted text-base max-w-xl mb-8 leading-relaxed">
-                Portofolio ini merangkum perjalanan belajar, karya pilihan, dan refleksi profesional dalam satu tampilan yang modern, dinamis, dan mudah dipresentasikan.
-              </p>
               <div className="flex flex-wrap gap-4 mb-10">
                 <a href="#karya" className="button-primary">Lihat Project</a>
                 <a href="#kontak" className="button-ghost">Hubungi Saya</a>
               </div>
               <div className="flex gap-4">
-                {['Visual Modern', 'Animasi Interaktif', 'Responsive Layout'].map(tag => (
+                {['Agile & SDLC', 'Product Artifacts', 'Data Monitoring'].map(tag => (
                   <span key={tag} className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-xs text-white/60">
                     {tag}
                   </span>
@@ -165,53 +254,33 @@ export default function Home() {
 
         {/* Profil Section */}
         <section id="profil" className="py-12 px-4 md:px-8">
-          <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12">
+          <div className="max-w-4xl mx-auto">
             <motion.div
               initial="hidden"
               whileInView="visible"
               variants={revealVariants}
-              className="glass-card p-12 rounded-[2.5rem]"
+              className="glass-card p-12 md:p-16 rounded-[3rem] text-center"
             >
               <p className="font-mono text-accent text-xs uppercase tracking-widest mb-6">Profil Singkat</p>
-              <h2 className="text-4xl font-bold mb-4">Athallah Pandhu Nitisara</h2>
-              <p className="text-accent/80 text-sm font-medium mb-8">Mahasiswa Sistem Informasi</p>
-              <p className="text-muted text-base leading-relaxed mb-8">
-                Saya adalah mahasiswa semester 6 jurusan Sistem Informasi di Telkom University yang berdomisili di Jakarta. Saya memiliki ketertarikan dalam dunia teknologi, khususnya dalam pengembangan sistem informasi dan solusi digital.
-                Saat ini, saya terus mempelajari berbagai konsep pengembangan aplikasi dan sistem, serta mengembangkan keterampilan untuk mempersiapkan diri menghadapi dunia kerja di bidang teknologi.
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">Athallah Pandhu Nitisara</h2>
+              <p className="text-accent/80 text-sm font-medium mb-10">Mahasiswa Sistem Informasi (Semester 6) • Telkom University</p>
+
+              <p className="text-muted text-lg leading-relaxed max-w-4xl mx-auto italic border-l-4 border-accent pl-8 py-2">
+                "Mahasiswa Sistem Informasi Semester 6 yang berfokus pada <span className="text-white font-bold">Product Planning & Operations</span>. Memiliki pemahaman kuat dalam <span className="text-accent">SDLC & Agile</span>, serta terampil menyusun artefak produk seperti <span className="text-accent font-bold">Epics, User Stories, dan Acceptance Criteria</span>. Saya antusias untuk mendalami <span className="text-white">video streaming workflows</span> dan siap berperan sebagai penghubung strategis antara tim Engineering, Product, dan Stakeholders."
               </p>
 
-            </motion.div>
-
-            <div className="grid gap-6">
-              <motion.div
-                initial="hidden"
-                whileInView="visible"
-                variants={revealVariants}
-                className="glass-card p-10 rounded-[2.5rem]"
-              >
-                <h3 className="text-2xl font-bold mb-4">Gaya Kerja Saya</h3>
-                <p className="text-muted">Saya terbiasa menyusun ide dengan rapi, fleksibel saat eksekusi, dan selalu berusaha membuat proses belajar jadi lebih hidup dan relate..</p>
-              </motion.div>
-              <div className="grid md:grid-cols-3 gap-6">
-                {[
-                  { icon: <Layout />, title: "Desain Visual", color: "text-blue-400" },
-                  { icon: <Code />, title: "Struktur Jelas", color: "text-accent" },
-                  { icon: <Zap />, title: "Interaktif", color: "text-purple-400" }
-                ].map((item, i) => (
-                  <motion.div
-                    key={i}
-                    initial="hidden"
-                    whileInView="visible"
-                    variants={revealVariants}
-                    className="glass-card p-6 rounded-3xl"
-                  >
-                    <div className={`${item.color} mb-4`}>{item.icon}</div>
-                    <h4 className="font-bold text-sm mb-2">{item.title}</h4>
-                    <p className="text-[10px] text-muted uppercase tracking-tighter">Professional Focus</p>
-                  </motion.div>
-                ))}
+              <div className="mt-10 flex justify-center gap-6">
+                <div className="flex flex-col items-center">
+                  <span className="text-white font-bold">Jakarta</span>
+                  <span className="text-[10px] text-muted uppercase tracking-widest">Domisili</span>
+                </div>
+                <div className="w-px h-8 bg-white/10" />
+                <div className="flex flex-col items-center">
+                  <span className="text-white font-bold">Semester 6</span>
+                  <span className="text-[10px] text-muted uppercase tracking-widest">Akademik</span>
+                </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
@@ -420,81 +489,93 @@ export default function Home() {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="glass-card w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-[3rem] relative z-10 custom-scrollbar"
+              className="glass-card w-full max-w-6xl max-h-[90vh] rounded-[2.5rem] relative z-10 flex flex-col overflow-hidden"
             >
               <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-8 right-8 p-3 bg-white/10 hover:bg-white/20 rounded-full transition-all z-20"
+                className="absolute top-6 right-6 p-2.5 bg-white/10 hover:bg-white/20 rounded-xl transition-all z-20"
               >
-                <X size={24} />
+                <X size={20} />
               </button>
 
-              <div className="grid lg:grid-cols-2 gap-12 p-8 md:p-16">
-                <div className="space-y-8">
-                  <div className="aspect-[4/3] rounded-[2rem] overflow-hidden">
-                    <img
-                      src={selectedProject.image}
-                      alt={selectedProject.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="flex flex-wrap gap-3">
-                    {['React', 'Tailwind', 'Framer Motion'].map(tag => (
-                      <span key={tag} className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-xs text-white/60">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+              <div className="flex flex-col h-full p-8 md:p-12 overflow-hidden">
+                {/* Top Section: Header & Image */}
+                <div className="grid lg:grid-cols-5 gap-10 items-start mb-8 h-full">
+                  {/* Left Column: Visuals (Made Slimmer to save height) */}
+                  <div className="lg:col-span-2 space-y-4 flex flex-col h-full">
+                    <div className="aspect-video w-full rounded-[1.2rem] overflow-hidden border border-white/10 shadow-xl shrink-0 bg-white/5">
+                      <img
+                        src={selectedProject.image}
+                        alt={selectedProject.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
 
-                <div className="flex flex-col">
-                  <span className="text-accent font-mono text-xs uppercase tracking-widest mb-4 block">
-                    {selectedProject.meta}
-                  </span>
-                  <h3 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
-                    {selectedProject.title}
-                  </h3>
-                  <p className="text-muted text-lg leading-relaxed mb-10">
-                    {selectedProject.summary}
-                  </p>
-
-                  <div className="space-y-6 mb-12">
-                    <h4 className="font-bold text-lg">Poin Penting:</h4>
-                    <ul className="space-y-4">
-                      {selectedProject.bullets.map((bullet: string, i: number) => (
-                        <li key={i} className="flex gap-4 items-start text-sm text-muted">
-                          <div className="w-5 h-5 rounded-full bg-accent/20 flex items-center justify-center shrink-0 mt-0.5">
-                            <ArrowUpRight size={12} className="text-accent" />
-                          </div>
-                          {bullet}
-                        </li>
+                    {/* Integrated Small Gallery */}
+                    <div className="grid grid-cols-2 gap-3 flex-1 overflow-hidden">
+                      {[1, 2, 3, 4].map((_, idx) => (
+                        <div key={idx} className="bg-white/5 rounded-xl border border-white/10 flex items-center justify-center relative group cursor-pointer overflow-hidden aspect-video">
+                          <Layout className="text-white/5 group-hover:text-accent transition-colors" size={20} />
+                          <div className="absolute inset-0 bg-accent/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </div>
                       ))}
-                    </ul>
+                    </div>
                   </div>
 
-                  <div className="mt-auto pt-8 border-t border-white/10 flex gap-4">
-                    <Link
-                      to={`/project/${selectedProject.id}`}
-                      rel="noopener noreferrer"
-                      className="button-primary flex-1 text-center"
-                    >
-                      Detail Project
-                    </Link>
-                    <a
-                      href={selectedProject.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="button-ghost p-4 rounded-full min-w-0"
-                    >
-                      <ExternalLink size={20} />
-                    </a>
+                  {/* Right Column: Info (Made Wider) */}
+                  <div className="lg:col-span-3 flex flex-col h-full justify-between">
+                    <div>
+                      <div className="flex justify-between items-start mb-4">
+                        <span className="text-accent font-mono text-[9px] uppercase tracking-[0.3em] block">
+                          {selectedProject.meta} — {selectedProject.role || "Lead"}
+                        </span>
+                      </div>
+
+                      <h3 className="text-2xl md:text-3xl font-black mb-4 leading-tight tracking-tight">
+                        {selectedProject.title}
+                      </h3>
+
+                      <p className="text-muted text-[11px] leading-relaxed mb-6 opacity-80 line-clamp-3">
+                        {selectedProject.summary}
+                      </p>
+
+                      <div className="grid md:grid-cols-1 gap-4 bg-white/5 p-5 rounded-xl border border-white/5">
+                        <h4 className="font-bold text-[10px] uppercase tracking-widest text-white/40">Key Highlights</h4>
+                        <ul className="grid grid-cols-1 gap-3">
+                          {selectedProject.bullets.slice(0, 3).map((bullet: string, i: number) => (
+                            <li key={i} className="flex gap-3 items-start text-[10px] text-muted">
+                              <CheckCircle2 size={12} className="text-accent shrink-0 mt-0.5" />
+                              {bullet}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="pt-6 border-t border-white/10 flex gap-3">
+                      <Link
+                        to={`/project/${selectedProject.id}`}
+                        className="button-primary flex-1 text-center !py-3 !text-xs !min-w-0 !rounded-xl"
+                      >
+                        Detail Project
+                      </Link>
+                      <a
+                        href={selectedProject.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="button-ghost !p-3 rounded-xl min-w-0"
+                      >
+                        <ExternalLink size={16} />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
             </motion.div>
           </div>
-        )}
-      </AnimatePresence>
-    </div>
+        )
+        }
+      </AnimatePresence >
+    </div >
   );
 }
