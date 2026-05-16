@@ -5,10 +5,10 @@
   --color-brand-deep: #1e3a8a;
   --color-accent: #00f2ff;
   --color-accent-strong: #7000ff;
-  
+
   --font-display: "Space Grotesk", sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
-  
+
   --radius-xl: 32px;
 }
 
@@ -49,7 +49,7 @@
 }
 
 .button-primary {
-  @apply inline-flex items-center justify-center min-w-[170px] px-6 py-4 rounded-full font-bold text-[#101751] bg-accent shadow-[0_18px_36px_rgba(203,255,156,0.22)] transition-all hover:-translate-y-1;
+  @apply inline-flex items-center justify-center min-w-[170px] px-6 py-4 rounded-full font-bold text-black bg-accent shadow-[0_18px_36px_rgba(203, 255, 156, 0.22)] transition-all hover:-translate-y-1;
 }
 
 .button-ghost {
@@ -59,13 +59,16 @@
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px;
 }
+
 .custom-scrollbar::-webkit-scrollbar-track {
   background: transparent;
 }
+
 .custom-scrollbar::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 999px;
 }
+
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.2);
 }

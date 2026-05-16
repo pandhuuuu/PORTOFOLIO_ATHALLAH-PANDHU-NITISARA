@@ -13,7 +13,9 @@ import {
   Code,
   Layout,
   Zap,
-  CheckCircle2
+  CheckCircle2,
+  Linkedin,
+  MessageCircle
 } from 'lucide-react';
 
 
@@ -158,7 +160,7 @@ export default function Home() {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-2">
-            {['Beranda', 'Profil', 'Perjalanan', 'Karya', 'Kontak'].map((item) => (
+            {['Home', 'Profile', 'Tools', 'Works', 'Contact'].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -185,9 +187,9 @@ export default function Home() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-x-4 top-24 z-40 bg-[#0d1264] border border-white/10 p-4 rounded-[2rem] shadow-2xl md:hidden"
+            className="fixed inset-x-4 top-24 z-40 bg-black/90 backdrop-blur-2xl border border-white/10 p-4 rounded-[2rem] shadow-2xl md:hidden"
           >
-            {['Beranda', 'Profil', 'Perjalanan', 'Karya', 'Kontak'].map((item) => (
+            {['Home', 'Profile', 'Tools', 'Works', 'Contact'].map((item) => (
               <a
                 key={item}
                 href={`#${item.toLowerCase()}`}
@@ -203,7 +205,7 @@ export default function Home() {
 
       <main>
         {/* Hero Section */}
-        <section id="beranda" className="relative pt-12 pb-20 px-4 md:px-8 overflow-hidden">
+        <section id="home" className="relative pt-12 pb-20 px-4 md:px-8 overflow-hidden">
           <div className="max-w-5xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial="hidden"
@@ -219,8 +221,8 @@ export default function Home() {
                 </span>
               </h1>
               <div className="flex flex-wrap gap-4 mb-10">
-                <a href="#karya" className="button-primary">Lihat Project</a>
-                <a href="#kontak" className="button-ghost">Hubungi Saya</a>
+                <a href="#works" className="button-primary">View Projects</a>
+                <a href="#contact" className="button-ghost">Contact Me</a>
               </div>
               <div className="flex gap-4">
                 {['Agile & SDLC', 'Product Artifacts', 'Data Monitoring'].map(tag => (
@@ -252,8 +254,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Profil Section */}
-        <section id="profil" className="py-12 px-4 md:px-8">
+        {/* Profile Section */}
+        <section id="profile" className="py-12 px-4 md:px-8">
           <div className="max-w-4xl mx-auto">
             <motion.div
               initial="hidden"
@@ -261,23 +263,23 @@ export default function Home() {
               variants={revealVariants}
               className="glass-card p-12 md:p-16 rounded-[3rem] text-center"
             >
-              <p className="font-mono text-accent text-xs uppercase tracking-widest mb-6">Profil Singkat</p>
+              <p className="font-mono text-accent text-xs uppercase tracking-widest mb-6">Profile</p>
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Athallah Pandhu Nitisara</h2>
-              <p className="text-accent/80 text-sm font-medium mb-10">Mahasiswa Sistem Informasi (Semester 6) • Telkom University</p>
+              <p className="text-accent/80 text-sm font-medium mb-10">Information Systems Student • Telkom University</p>
 
               <p className="text-muted text-lg leading-relaxed max-w-4xl mx-auto italic border-l-4 border-accent pl-8 py-2">
-                "Mahasiswa Sistem Informasi Semester 6 yang berfokus pada <span className="text-white font-bold">Product Planning & Operations</span>. Memiliki pemahaman kuat dalam <span className="text-accent">SDLC & Agile</span>, serta terampil menyusun artefak produk seperti <span className="text-accent font-bold">Epics, User Stories, dan Acceptance Criteria</span>. Saya antusias untuk mendalami <span className="text-white">video streaming workflows</span> dan siap berperan sebagai penghubung strategis antara tim Engineering, Product, dan Stakeholders."
+                Information Systems student with an interest in technology, digital product development, and system analysis. Passionate about learning new tools and development processes, with experience working collaboratively in team projects.
               </p>
 
               <div className="mt-10 flex justify-center gap-6">
                 <div className="flex flex-col items-center">
                   <span className="text-white font-bold">Jakarta</span>
-                  <span className="text-[10px] text-muted uppercase tracking-widest">Domisili</span>
+                  <span className="text-[10px] text-muted uppercase tracking-widest">Location</span>
                 </div>
                 <div className="w-px h-8 bg-white/10" />
                 <div className="flex flex-col items-center">
-                  <span className="text-white font-bold">Semester 6</span>
-                  <span className="text-[10px] text-muted uppercase tracking-widest">Akademik</span>
+                  <span className="text-white font-bold">Information Systems</span>
+                  <span className="text-[10px] text-muted uppercase tracking-widest">Academic</span>
                 </div>
               </div>
             </motion.div>
@@ -285,105 +287,76 @@ export default function Home() {
         </section>
 
         {/* Alat & Aplikasi Section */}
-        <section id="perjalanan" className="py-12 px-4 md:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-20">
+        <section id="tools" className="py-12 px-4 md:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-16">
             <p className="section-kicker mb-6 text-accent">Tools & Stack</p>
             <h2 className="text-2xl md:text-3xl font-bold leading-[1.1] tracking-tight">
-              Aplikasi penunjang yang saya gunakan untuk produktivitas & kreativitas.
+              Supportive applications I use for productivity & creativity.
             </h2>
           </div>
 
-          <div className="max-w-7xl mx-auto space-y-20">
-            {[
-              {
-                category: "Development & Programming",
-                apps: [
-                  { name: "VS Code", logo: "https://img.icons8.com/color/96/visual-studio-code-2019.png" },
-                  { name: "Node.js", logo: "https://cdn.simpleicons.org/nodedotjs/339933" },
-                  { name: "NetBeans", logo: "https://cdn.simpleicons.org/apachenetbeans/CB333B" },
-                  { name: "Google Colabs", logo: "https://cdn.simpleicons.org/googlecolab/F9AB00" },
-                  { name: "Postman", logo: "https://cdn.simpleicons.org/postman/FF6C37" },
-                  { name: "Visual Paradigm", logo: "https://cdn.simpleicons.org/visualparadigm/1C3C6C" }
-                ]
-              },
-              {
-                category: "Database & Backend Systems",
-                apps: [
-                  { name: "MySQL Workbench", logo: "https://cdn.simpleicons.org/mysql/4479A1" },
-                  { name: "Supabase", logo: "https://cdn.simpleicons.org/supabase/3FCF8E" },
-                  { name: "XAMPP", logo: "https://cdn.simpleicons.org/xampp/FB7A24" },
-                  { name: "Laragon", logo: "https://cdn.simpleicons.org/php/777BB4" },
-                  { name: "SAP GUI", logo: "https://cdn.simpleicons.org/sap/008FD3" }
-                ]
-              },
-              {
-                category: "Infrastructure & Virtualization",
-                apps: [
-                  { name: "Cisco Packet Tracer", logo: "https://cdn.simpleicons.org/cisco/1BA0D7" },
-                  { name: "VMware", logo: "https://cdn.simpleicons.org/vmware/607078" },
-                  { name: "VirtualBox", logo: "https://cdn.simpleicons.org/virtualbox/183A61" }
-                ]
-              },
-              {
-                category: "Design, Data & Productivity",
-                apps: [
-                  { name: "Figma", logo: "https://cdn.simpleicons.org/figma/F24E1E" },
-                  { name: "Canva", logo: "https://img.icons8.com/color/96/canva.png" },
-                  { name: "Looker", logo: "https://cdn.simpleicons.org/looker/4285F4" },
-                  { name: "Mendeley", logo: "https://cdn.simpleicons.org/mendeley/A70812" },
-                  { name: "MS Word", logo: "https://img.icons8.com/color/96/microsoft-word-2019.png" },
-                  { name: "MS Excel", logo: "https://img.icons8.com/color/96/microsoft-excel-2019.png" },
-                  { name: "MS Teams", logo: "https://img.icons8.com/color/96/microsoft-teams.png" }
-                ]
-              }
-            ].map((cat, idx) => (
-              <div key={idx} className="space-y-8">
-                <div className="flex items-center justify-center gap-6">
-                  <div className="h-[1px] w-12 bg-white/10" />
-                  <h3 className="text-xl font-bold text-white/80 tracking-tight">{cat.category}</h3>
-                  <div className="h-[1px] w-12 bg-white/10" />
-                </div>
-                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
-                  {cat.apps.map((app, i) => (
-                    <motion.div
-                      key={i}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: i * 0.05 }}
-                      whileHover={{ y: -8, scale: 1.02 }}
-                      className="glass-card group p-6 rounded-[2rem] flex flex-col items-center justify-center gap-4 border border-white/5 hover:border-accent/30 transition-all duration-500"
-                    >
-                      <div className="relative">
-                        <div className="absolute inset-0 bg-accent/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        <img
-                          src={app.logo}
-                          alt={app.name}
-                          className="w-10 h-10 relative z-10 transition-all duration-500 object-contain"
-                        />
-                      </div>
-                      <span className="text-[11px] font-medium text-white/50 group-hover:text-white transition-colors text-center leading-tight">
-                        {app.name}
-                      </span>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            ))}
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-8 gap-4">
+              {[
+                { name: "VS Code", logo: "https://img.icons8.com/color/96/visual-studio-code-2019.png" },
+                { name: "Node.js", logo: "https://cdn.simpleicons.org/nodedotjs/339933" },
+                { name: "NetBeans", logo: "https://cdn.simpleicons.org/apachenetbeans/CB333B" },
+                { name: "Google Colabs", logo: "https://cdn.simpleicons.org/googlecolab/F9AB00" },
+                { name: "Postman", logo: "https://cdn.simpleicons.org/postman/FF6C37" },
+                { name: "Visual Paradigm", logo: "https://cdn.simpleicons.org/visualparadigm/1C3C6C" },
+                { name: "MySQL", logo: "https://cdn.simpleicons.org/mysql/4479A1" },
+                { name: "Supabase", logo: "https://cdn.simpleicons.org/supabase/3FCF8E" },
+                { name: "XAMPP", logo: "https://cdn.simpleicons.org/xampp/FB7A24" },
+                { name: "Laragon", logo: "https://cdn.simpleicons.org/php/777BB4" },
+                { name: "SAP GUI", logo: "https://cdn.simpleicons.org/sap/008FD3" },
+                { name: "Packet Tracer", logo: "https://cdn.simpleicons.org/cisco/1BA0D7" },
+                { name: "VMware", logo: "https://cdn.simpleicons.org/vmware/607078" },
+                { name: "VirtualBox", logo: "https://cdn.simpleicons.org/virtualbox/183A61" },
+                { name: "Figma", logo: "https://cdn.simpleicons.org/figma/F24E1E" },
+                { name: "Canva", logo: "https://img.icons8.com/color/96/canva.png" },
+                { name: "Looker", logo: "https://cdn.simpleicons.org/looker/4285F4" },
+                { name: "Mendeley", logo: "https://cdn.simpleicons.org/mendeley/A70812" },
+                { name: "MS Word", logo: "https://img.icons8.com/color/96/microsoft-word-2019.png" },
+                { name: "MS Excel", logo: "https://img.icons8.com/color/96/microsoft-excel-2019.png" },
+                { name: "MS Teams", logo: "https://img.icons8.com/color/96/microsoft-teams.png" }
+              ].map((app, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.03 }}
+                  whileHover={{ y: -4, scale: 1.05 }}
+                  className="glass-card group p-4 rounded-2xl flex flex-col items-center justify-center gap-3 border border-white/5 hover:border-accent/30 transition-all duration-300"
+                >
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-accent/20 blur-lg rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    <img
+                      src={app.logo}
+                      alt={app.name}
+                      className="w-8 h-8 relative z-10 transition-all duration-300 object-contain"
+                    />
+                  </div>
+                  <span className="text-[10px] font-medium text-white/50 group-hover:text-white transition-colors text-center leading-tight">
+                    {app.name}
+                  </span>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* Karya Section */}
-        <section id="karya" className="py-12 px-4 md:px-8">
+        {/* Showcase Section */}
+        <section id="works" className="py-12 px-4 md:px-8">
           <div className="max-w-7xl mx-auto">
             <div className="mb-20 text-center">
-              <p className="section-kicker mb-6">Karya Pilihan</p>
-              <h2 className="text-2xl md:text-3xl font-bold leading-[1.1]">Eksplorasi Proyek & Portofolio</h2>
-              <p className="text-muted mt-4 max-w-xl mx-auto text-sm">Klik pada kartu proyek untuk melihat detail pengerjaan, tantangan, dan solusi yang saya terapkan.</p>
+              <p className="section-kicker mb-6">Selected Works</p>
+              <h2 className="text-2xl md:text-3xl font-bold leading-[1.1]">Portfolio & Project Exploration</h2>
+              <p className="text-muted mt-4 max-w-xl mx-auto text-sm">Click on a project card to view execution details, challenges, and solutions implemented.</p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {showcaseData.map((item, i) => (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {showcaseData.slice(0, 3).map((item, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 20 }}
@@ -411,7 +384,7 @@ export default function Home() {
                     <h3 className="text-lg font-bold mb-3 group-hover:text-accent transition-colors">{item.title}</h3>
                     <p className="text-muted text-xs leading-relaxed mb-6 line-clamp-2">{item.summary}</p>
                     <div className="flex items-center gap-2 text-accent text-xs font-bold">
-                      Lihat Detail <ArrowUpRight size={14} />
+                      View Details <ArrowUpRight size={14} />
                     </div>
                   </div>
                 </motion.div>
@@ -421,7 +394,7 @@ export default function Home() {
         </section>
 
         {/* Contact Section */}
-        <section id="kontak" className="py-12 px-4 md:px-8">
+        <section id="contact" className="py-12 px-4 md:px-8">
           <div className="max-w-7xl mx-auto">
             <motion.div
               initial="hidden"
@@ -430,31 +403,51 @@ export default function Home() {
               className="glass-card rounded-[3rem] p-12 md:p-24 grid lg:grid-cols-2 gap-16 items-center"
             >
               <div>
-                <p className="section-kicker mb-8">Hubungan Kita</p>
+                <p className="section-kicker mb-8">Get In Touch</p>
                 <h2 className="text-3xl md:text-4xl font-bold leading-[1.1] tracking-tighter mb-6">
-                  Mari Memulai <br />
-                  <span className="text-accent">Sesuatu yang Baru.</span>
+                  Let's Start <br />
+                  <span className="text-accent">Something New.</span>
                 </h2>
                 <p className="text-muted text-base leading-relaxed mb-8 max-w-md">
-                  Portfolio ini siap dipersonalisasi. Mari terhubung untuk mendiskusikan kolaborasi pendidikan atau proyek kreatif lainnya.
+                  This portfolio is ready to be personalized. Let's connect to discuss educational collaborations or other creative projects.
                 </p>
               </div>
-              <div className="flex flex-col gap-4">
+              <div className="grid md:grid-cols-2 gap-4">
                 <a
-                  href="mailto:athallahpandhu.n@"
-                  className="group flex flex-col gap-2 p-10 bg-white/5 border border-white/10 rounded-[2.5rem] hover:bg-white/10 transition-all hover:-translate-y-2"
+                  href="mailto:athallahpandhu.n@gmail.com"
+                  className="group flex flex-col gap-2 p-8 bg-white/5 border border-white/10 rounded-[2.5rem] hover:bg-white/10 transition-all hover:-translate-y-2 md:col-span-2"
                 >
-                  <Mail className="group-hover:text-accent transition-colors" size={32} />
-                  <span className="text-xs uppercase font-mono tracking-widest mt-4">Email</span>
-                  <strong className="text-2xl">athallahpandhu.n@gmail.com</strong>
+                  <Mail className="group-hover:text-accent transition-colors" size={28} />
+                  <span className="text-[10px] uppercase font-mono tracking-widest mt-2 opacity-50">Email</span>
+                  <strong className="text-lg md:text-xl">athallahpandhu.n@gmail.com</strong>
                 </a>
                 <a
                   href="https://wa.me/6285939133934"
-                  className="group flex flex-col gap-2 p-10 bg-white/5 border border-white/10 rounded-[2.5rem] hover:bg-white/10 transition-all hover:-translate-y-2"
+                  className="group flex flex-col gap-2 p-8 bg-white/5 border border-white/10 rounded-[2.5rem] hover:bg-white/10 transition-all hover:-translate-y-2"
                 >
-                  <Instagram className="group-hover:text-accent transition-colors" size={32} />
-                  <span className="text-xs uppercase font-mono tracking-widest mt-4">Whatsapp</span>
-                  <strong className="text-2xl">085939133934</strong>
+                  <MessageCircle className="group-hover:text-accent transition-colors" size={28} />
+                  <span className="text-[10px] uppercase font-mono tracking-widest mt-2 opacity-50">Whatsapp</span>
+                  <strong className="text-lg">085939133934</strong>
+                </a>
+                <a
+                  href="https://instagram.com/athallahpandhu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col gap-2 p-8 bg-white/5 border border-white/10 rounded-[2.5rem] hover:bg-white/10 transition-all hover:-translate-y-2"
+                >
+                  <Instagram className="group-hover:text-accent transition-colors" size={28} />
+                  <span className="text-[10px] uppercase font-mono tracking-widest mt-2 opacity-50">Instagram</span>
+                  <strong className="text-lg">@athallahpandhu</strong>
+                </a>
+                <a
+                  href="https://linkedin.com/in/athallahpandhu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex flex-col gap-2 p-8 bg-white/5 border border-white/10 rounded-[2.5rem] hover:bg-white/10 transition-all hover:-translate-y-2"
+                >
+                  <Linkedin className="group-hover:text-accent transition-colors" size={28} />
+                  <span className="text-[10px] uppercase font-mono tracking-widest mt-2 opacity-50">LinkedIn</span>
+                  <strong className="text-lg">Athallah Pandhu</strong>
                 </a>
               </div>
             </motion.div>
@@ -462,13 +455,16 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="py-12 border-t border-white/10 bg-[#0c105c]">
+      <footer className="py-12 border-t border-white/10 bg-black">
         <div className="max-w-7xl mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center justify-between gap-8">
-          <p className="text-white/40 text-sm font-medium">Athallah Pandhu Nitisara - E-Portfolio Interaktif 2026</p>
+          <p className="text-white/40 text-sm font-medium">Athallah Pandhu Nitisara</p>
           <div className="flex items-center gap-6">
-            <a href="#beranda" className="flex items-center gap-2 text-white/40 hover:text-white transition-all text-sm group">
-              Back to top
-              <ChevronUp size={16} className="group-hover:-translate-y-1 transition-transform" />
+            <a
+              href="#home"
+              className="px-6 py-3 rounded-2xl bg-white/5 border border-white/10 text-white/60 hover:text-accent hover:border-accent/30 hover:bg-accent/5 transition-all duration-300 flex items-center gap-3 text-xs font-bold group"
+            >
+              <span>Back to top</span>
+              <ChevronUp size={16} className="group-hover:-translate-y-1 transition-transform duration-300" />
             </a>
           </div>
         </div>
@@ -483,7 +479,7 @@ export default function Home() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedProject(null)}
-              className="absolute inset-0 bg-[#0c105c]/80 backdrop-blur-md"
+              className="absolute inset-0 bg-black/80 backdrop-blur-md"
             />
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -557,7 +553,7 @@ export default function Home() {
                         to={`/project/${selectedProject.id}`}
                         className="button-primary flex-1 text-center !py-3 !text-xs !min-w-0 !rounded-xl"
                       >
-                        Detail Project
+                        Project Details
                       </Link>
                       <a
                         href={selectedProject.link}

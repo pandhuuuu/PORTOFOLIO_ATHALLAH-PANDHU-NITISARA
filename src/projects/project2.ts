@@ -104,54 +104,134 @@ export const project2 = {
           description: "Visualisasi peta GIS yang menunjukkan persebaran laporan kerusakan secara real-time."
         },
         {
-          type: "carousel",
-          items: [
-            {
-              url: "https://imgur.com/placeholder-report-mobile.png",
-              caption: "Mobile Reporting Flow",
-              description: "Alur pelaporan 3 langkah bagi masyarakat untuk mengirimkan bukti kerusakan."
-            },
-            {
-              url: "https://imgur.com/placeholder-ai-logic.png",
-              caption: "AI Prioritization Logic",
-              description: "Diagram alur bagaimana AI menghitung skor urgensi berdasarkan kategori dan lokasi."
-            }
-          ]
+          url: "https://imgur.com/placeholder-report-mobile.png",
+          caption: "Mobile Reporting Flow",
+          description: "Alur pelaporan 3 langkah bagi masyarakat untuk mengirimkan bukti kerusakan."
+        },
+        {
+          url: "https://imgur.com/placeholder-ai-logic.png",
+          caption: "AI Prioritization Logic",
+          description: "Diagram alur bagaimana AI menghitung skor urgensi berdasarkan kategori dan lokasi."
+        },
+        {
+          url: "https://imgur.com/placeholder-ai-logic.png",
+          caption: "AI Prioritization Logic",
+          description: "Diagram alur bagaimana AI menghitung skor urgensi berdasarkan kategori dan lokasi."
         }
       ]
     },
     {
       type: "product_thinking",
-      title: "Product Thinking",
+      title: "Detailed Product Backlog (PBIs)",
       epics: [
         {
-          title: "Citizen Engagement",
-          description: "Meningkatkan partisipasi publik dalam pemantauan kota.",
+          title: "DEV-60 | Epic 1: User & Access Management",
+          description: "Manajemen identitas, hak akses, dan sistem notifikasi multi-role.",
           stories: [
             {
-              label: "User Story",
-              content: "Sebagai Warga Kota, saya ingin melaporkan lubang di jalan dengan foto dan lokasi otomatis agar laporan saya jelas dan cepat diproses.",
-              criteria: [
-                "User dapat mengunggah minimal 1 foto.",
-                "Sistem mengambil koordinat GPS secara otomatis.",
-                "User dapat menambahkan deskripsi singkat.",
-                "User menerima ID laporan untuk tracking status."
-              ]
+              label: "PBI-10 | Officer Management",
+              content: "Sebagai administrator, saya ingin melakukan CRUD data petugas lapangan mencakup informasi personal, spesialisasi, dan wilayah kerja, sehingga pengelolaan sumber daya lebih terorganisir.",
+              criteria: ["Form upload foto profil & spesialisasi.", "Riwayat penugasan per petugas.", "Statistik kinerja individu."]
+            },
+            {
+              label: "PBI-11 | Multi-Role Notifications",
+              content: "Sebagai pengguna sistem, saya ingin menerima notifikasi otomatis via in-app dan email sesuai peran masing-masing agar tidak melewatkan informasi penting.",
+              criteria: ["Notifikasi laporan baru (Admin).", "Notifikasi penugasan (Petugas).", "Notifikasi perubahan status (Masyarakat)."]
             }
           ]
         },
         {
-          title: "Data-Driven Maintenance",
-          description: "Optimasi alokasi sumber daya berdasarkan data nyata.",
+          title: "DEV-109 | Epic 2: Portals & Analytics",
+          description: "Dashboard interaktif, pemantauan geospasial, dan manajemen anggaran.",
           stories: [
             {
-              label: "User Story",
-              content: "Sebagai Admin Dinas, saya ingin melihat daftar laporan yang sudah diprioritaskan oleh sistem agar tim lapangan bisa menangani masalah yang paling mendesak terlebih dahulu.",
-              criteria: [
-                "Dashboard menampilkan list laporan terurut berdasarkan skor urgensi.",
-                "Admin dapat melihat detail bukti foto dan lokasi GIS.",
-                "Admin dapat mengubah status laporan menjadi 'Diproses' atau 'Selesai'."
-              ]
+              label: "PBI-06 | Interactive Dashboard",
+              content: "Sebagai administrator, saya ingin melihat dashboard interaktif yang menampilkan statistik kondisi aset, KPI pemeliharaan, dan grafik tren kerusakan.",
+              criteria: ["Grafik tren kerusakan per periode.", "Counter jumlah laporan per status.", "KPI penyelesaian tugas."]
+            },
+            {
+              label: "PBI-07 | Geospatial Monitoring",
+              content: "Sebagai administrator, saya ingin melihat peta interaktif dengan color-coding kondisi aset (baik/rusak) serta marker laporan aktif.",
+              criteria: ["Color-coding marker berdasarkan kondisi.", "Pop-up detail saat marker diklik.", "Filter peta berbasis kategori."]
+            },
+            {
+              label: "PBI-15 | Budget Tracking",
+              content: "Sebagai administrator, saya ingin memantau penyerapan anggaran dan melihat perbandingan anggaran vs realisasi per periode.",
+              criteria: ["Grafik perbandingan budget vs actual.", "Pencatatan estimasi biaya per kegiatan.", "Export data keuangan ke tabel."]
+            }
+          ]
+        },
+        {
+          title: "DEV-110 | Epic 3: Core Reporting Workflow",
+          description: "Siklus hidup laporan dari pengiriman masyarakat hingga penyelesaian di lapangan.",
+          stories: [
+            {
+              label: "PBI-02 | Smart Reporting",
+              content: "Sebagai masyarakat, saya ingin melaporkan kerusakan melalui web dengan fitur upload foto, deteksi lokasi otomatis, dan pemilihan tingkat urgensi.",
+              criteria: ["Auto-capture koordinat GPS.", "Upload minimal 1 foto bukti.", "Pilihan kategori kerusakan."]
+            },
+            {
+              label: "PBI-03 | Report Verification",
+              content: "Sebagai administrator, saya ingin memverifikasi laporan, mengubah status, dan menetapkan tingkat prioritas penanganan.",
+              criteria: ["Update status (Pending/Verified/Rejected).", "Field catatan verifikasi.", "Dropdown prioritas penanganan."]
+            },
+            {
+              label: "PBI-04 | Task Assignment",
+              content: "Sebagai administrator, saya ingin menugaskan pekerjaan kepada petugas lapangan mencakup estimasi waktu dan instruksi kerja.",
+              criteria: ["Assign petugas berdasarkan wilayah.", "Input estimasi pengerjaan.", "Kirim notifikasi ke petugas."]
+            },
+            {
+              label: "PBI-05 | Progress Update",
+              content: "Sebagai petugas lapangan, saya ingin memperbarui status pekerjaan dan mengunggah dokumentasi progress secara real-time.",
+              criteria: ["Update status (Start/In-Progress/Done).", "Upload foto progress lapangan.", "Input catatan kendala/hasil."]
+            }
+          ]
+        },
+        {
+          title: "DEV-111 | Epic 4: AI Vision & Priority Engine",
+          description: "Otomatisasi triase dan rekomendasi prioritas menggunakan Machine Learning.",
+          stories: [
+            {
+              label: "PBI-16 | AI Image Classification",
+              content: "Sebagai administrator, saya ingin laporan diklasifikasikan secara otomatis oleh modul AI berdasarkan jenis infrastruktur dan kategori kerusakan.",
+              criteria: ["Analisis foto via Computer Vision.", "Auto-detect kategori (Jalan/Jembatan).", "Estimasi tingkat keparahan awal."]
+            },
+            {
+              label: "PBI-17 | Smart Priority Scoring",
+              content: "Sebagai sistem, saya ingin memberikan rekomendasi skor prioritas otomatis berdasarkan tingkat urgensi, frekuensi, dan nilai strategis aset.",
+              criteria: ["Kalkulasi skor prioritas (1-100).", "Dashboard rekomendasi prioritas AI.", "Input ketersediaan petugas ke dalam skor."]
+            }
+          ]
+        },
+        {
+          title: "DEV-112 | Epic 5: Asset & Spatial Data",
+          description: "Inventori aset digital lengkap dengan dokumentasi teknis dan riwayat aktivitas.",
+          stories: [
+            {
+              label: "PBI-01 | Asset Inventory CRUD",
+              content: "Sebagai administrator, saya ingin membangun basis data aset infrastruktur yang terpusat mencakup koordinat, tahun bangun, dan dokumentasi foto.",
+              criteria: ["Form master data aset lengkap.", "Mapping koordinat GIS aset.", "History tahun pembangunan."]
+            },
+            {
+              label: "PBI-13 | Document & Timeline",
+              content: "Sebagai administrator, saya ingin mengelola dokumen teknis (gambar/kontrak) dan melihat timeline riwayat seluruh aktivitas pemeliharaan.",
+              criteria: ["Storage dokumen teknis PDF/DWG.", "Visualisasi timeline histori per aset.", "Log aktivitas pemeliharaan."]
+            }
+          ]
+        },
+        {
+          title: "DEV-113 | Epic 6: System Administration",
+          description: "Manajemen data master, pemeliharaan rutin, dan pelaporan eksekutif.",
+          stories: [
+            {
+              label: "PBI-08 | Preventive Schedule",
+              content: "Sebagai administrator, saya ingin mengelola jadwal pemeliharaan preventif dengan kalender visual dan reminder otomatis.",
+              criteria: ["Visualisasi kalender pemeliharaan.", "Set interval rutin (bulanan/tahunan).", "Reminder H-7 jatuh tempo."]
+            },
+            {
+              label: "PBI-14 | Executive Reporting",
+              content: "Sebagai administrator, saya ingin menghasilkan laporan dalam format PDF dan Excel untuk kebutuhan audit dan instansi terkait.",
+              criteria: ["Export PDF laporan kondisi aset.", "Export Excel rekapitulasi periodik.", "Format laporan standar instansi."]
             }
           ]
         }
@@ -160,7 +240,7 @@ export const project2 = {
     {
       type: "insight",
       title: "Key Learning",
-      content: "Mengintegrasikan AI ke dalam masalah infrastruktur bukan sekadar tentang teknologi, tetapi tentang bagaimana mengubah data mentah dari masyarakat menjadi keputusan operasional yang menyelamatkan anggaran dan waktu."
+      content: "Membangun InfraTrack mengajarkan saya bahwa manajemen produk digital di sektor publik bukan hanya soal fitur teknis, tapi soal membangun kepercayaan melalui transparansi data bagi masyarakat dan efisiensi kerja bagi petugas di lapangan."
     }
   ]
 };
