@@ -57,10 +57,10 @@ export const project2 = {
           title: "Discovery & User Research",
           description: "Tahap awal untuk memahami masalah mendasar dalam manajemen infrastruktur.",
           details: [
-            "Wawancara dengan dinas terkait mengenai alur kerja pemeliharaan.",
-            "Survei masyarakat mengenai kendala dalam melaporkan kerusakan.",
-            "Analisis data historis laporan infrastruktur.",
-            "Penentuan parameter algoritma prioritas AI."
+            "Melakukan identifikasi permasalahan umum dalam proses pemeliharaan dan pelaporan infrastruktur.",
+            "Menganalisis kebutuhan pengguna dan pihak terkait dalam sistem manajemen infrastruktur.",
+            "Mengkaji data dan referensi terkait pengelolaan infrastruktur berkelanjutan sesuai SDG 9.",
+            "Menentukan parameter awal untuk pengembangan sistem prioritas berbasis AI."
           ]
         },
         {

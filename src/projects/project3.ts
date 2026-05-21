@@ -6,7 +6,7 @@ export const project3 = {
   tags: ["DWBI", "Data Engineering", "Data Analytics", "Machine Learning"],
   summary: "Implementasi solusi end-to-end Data Warehouse menggunakan arsitektur Star Schema untuk mengoptimalkan profitabilitas Global Superstore melalui proses ETL, visualisasi dashboard interaktif, dan pemodelan prediktif.",
   fullDescription: "Proyek ini berfokus pada transformasi data transaksional Global Superstore (±51.000 baris data) menjadi wawasan bisnis yang strategis. Melalui proses ETL (Extract, Transform, Load) yang ketat menggunakan Pentaho, data dikelola ke dalam gudang data MySQL dengan skema Star. Hasilnya divisualisasikan dalam Looker Studio untuk pemantauan KPI secara real-time, didukung dengan analisis data mining untuk segmentasi pasar dan prediksi penjualan.",
-  image: "https://via.placeholder.com/1200x800?text=Global+Superstore+Dashboard+Overview",
+  image: "https://imgur.com/00YRJdF.png",
   accent: "rgba(120, 180, 255, 0.2)",
   link: "https://datastudio.google.com/s/jg9pQ93JPO4",
   tech: ["Pentaho PDI", "MySQL", "Looker Studio", "Python (Scikit-Learn)", "SQL"],

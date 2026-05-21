@@ -405,12 +405,9 @@ export default function Home() {
               <div>
                 <p className="section-kicker mb-8">Get In Touch</p>
                 <h2 className="text-3xl md:text-4xl font-bold leading-[1.1] tracking-tighter mb-6">
-                  Let's Start <br />
-                  <span className="text-accent">Something New.</span>
+                  Let's Connect <br />
+                  <span className="text-accent">With Me.</span>
                 </h2>
-                <p className="text-muted text-base leading-relaxed mb-8 max-w-md">
-                  This portfolio is ready to be personalized. Let's connect to discuss educational collaborations or other creative projects.
-                </p>
               </div>
               <div className="grid md:grid-cols-2 gap-4">
                 <a
