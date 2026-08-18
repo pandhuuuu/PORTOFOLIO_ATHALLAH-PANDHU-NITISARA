@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Project Detail - IS Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-surface": "#131b2e",
+                "on-surface-variant": "#434656",
+                "surface-dim": "#d2d9f4",
+                "on-tertiary-fixed-variant": "#2f2ebe",
+                "primary-fixed": "#dde1ff",
+                "on-secondary-fixed": "#001e2b",
+                "on-tertiary": "#ffffff",
+                "on-primary-fixed": "#001452",
+                "secondary-fixed": "#c2e8ff",
+                "primary-fixed-dim": "#b7c4ff",
+                "surface-base": "#F8FAFC",
+                "error-container": "#ffdad6",
+                "inverse-primary": "#b7c4ff",
+                "on-secondary-fixed-variant": "#004d67",
+                "secondary": "#006688",
+                "on-secondary-container": "#004b65",
+                "surface-container-low": "#f2f3ff",
+                "surface": "#faf8ff",
+                "deep-indigo": "#4338CA",
+                "on-primary": "#ffffff",
+                "inverse-surface": "#283044",
+                "inverse-on-surface": "#eef0ff",
+                "surface-container-lowest": "#ffffff",
+                "surface-tint": "#004ced",
+                "on-tertiary-container": "#e3e2ff",
+                "status-warning": "#F59E0B",
+                "tertiary-fixed": "#e1e0ff",
+                "surface-container": "#eaedff",
+                "surface-container-high": "#e2e7ff",
+                "tertiary-container": "#5153de",
+                "tertiary": "#3737c5",
+                "surface-card": "#FFFFFF",
+                "secondary-container": "#00c1fd",
+                "vibrant-blue": "#0052FF",
+                "primary-container": "#0052ff",
+                "status-success": "#10B981",
+                "on-tertiary-fixed": "#07006c",
+                "outline-variant": "#c3c5d9",
+                "on-error": "#ffffff",
+                "primary": "#003ec7",
+                "surface-container-highest": "#dae2fd",
+                "background": "#faf8ff",
+                "surface-variant": "#dae2fd",
+                "on-secondary": "#ffffff",
+                "secondary-fixed-dim": "#75d1ff",
+                "electric-cyan": "#00C2FF",
+                "status-error": "#EF4444",
+                "on-primary-container": "#dfe3ff",
+                "surface-bright": "#faf8ff",
+                "on-primary-fixed-variant": "#0038b6",
+                "outline": "#737688",
+                "error": "#ba1a1a",
+                "on-error-container": "#93000a",
+                "tertiary-fixed-dim": "#c0c1ff",
+                "on-background": "#131b2e"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "gutter": "24px",
+                "unit": "8px",
+                "margin-mobile": "20px",
+                "container-max": "1280px"
+        },
+        "fontFamily": {
+                "body-lg": [
+                        "Inter"
+                ],
+                "headline-lg-mobile": [
+                        "Inter"
+                ],
+                "headline-lg": [
+                        "Inter"
+                ],
+                "headline-md": [
+                        "Inter"
+                ],
+                "label-code": [
+                        "JetBrains Mono"
+                ],
+                "label-caps": [
+                        "Inter"
+                ],
+                "display": [
+                        "Inter"
+                ],
+                "body-md": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "28px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "1.3",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-code": [
+                        "13px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "500"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "1.0",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "display": [
+                        "56px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.04em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.5",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-md border-b border-outline-variant/30">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter flex justify-between items-center h-16">
+<div class="font-headline-md text-headline-md text-primary font-bold">
+                IS Portfolio
+            </div>
+<div class="hidden md:flex space-x-gutter">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">About Me</a>
+<a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1 active:scale-95 duration-150 transition-colors" href="#">Projects</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Resume</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contact</a>
+</div>
+<button class="hidden md:block bg-primary-container text-on-primary px-4 py-2 rounded font-body-md text-body-md hover:opacity-90 transition-opacity active:scale-95 duration-150">
+                Hire Me
+            </button>
+<button class="md:hidden text-on-surface-variant">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-24 pb-[80px] px-margin-mobile md:px-gutter max-w-container-max mx-auto w-full">
+<!-- Project Header -->
+<header class="mb-[80px]">
+<a class="inline-flex items-center text-primary font-body-md mb-6 hover:opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined mr-2">arrow_back</span>
+                Back to Projects
+            </a>
+<h1 class="font-display text-display text-on-surface mb-6 md:w-8/12">
+                Enterprise Resource Planning Integration for Logistics Logistics Logistics
+            </h1>
+<div class="flex flex-wrap gap-4 mb-8">
+<span class="inline-flex items-center px-3 py-1 bg-[#F0FDFA] text-[#0F766E] rounded font-label-code text-label-code">
+<span class="material-symbols-outlined text-[16px] mr-2">database</span>
+                    PostgreSQL
+                </span>
+<span class="inline-flex items-center px-3 py-1 bg-[#F0FDFA] text-[#0F766E] rounded font-label-code text-label-code">
+<span class="material-symbols-outlined text-[16px] mr-2">code</span>
+                    Python (Django)
+                </span>
+<span class="inline-flex items-center px-3 py-1 bg-[#F0FDFA] text-[#0F766E] rounded font-label-code text-label-code">
+<span class="material-symbols-outlined text-[16px] mr-2">api</span>
+                    RESTful API
+                </span>
+</div>
+<div class="flex gap-4">
+<a class="inline-flex items-center justify-center px-6 py-3 bg-primary-container text-on-primary rounded font-body-md text-body-md hover:opacity-90 transition-opacity min-w-[140px] h-12" href="#">
+                    View Live Demo
+                    <span class="material-symbols-outlined ml-2">open_in_new</span>
+</a>
+<a class="inline-flex items-center justify-center px-6 py-3 border border-outline text-primary rounded font-body-md text-body-md hover:bg-surface-container-low transition-colors min-w-[140px] h-12" href="#">
+                    GitHub Repo
+                    <span class="material-symbols-outlined ml-2">code</span>
+</a>
+</div>
+</header>
+<!-- Hero Image -->
+<div class="w-full aspect-[21/9] bg-surface-container-high rounded-xl overflow-hidden mb-[80px] border border-outline-variant/30 relative">
+<div class="bg-cover bg-center w-full h-full" data-alt="A modern, high-contrast digital dashboard interface displayed on a sleek monitor in a brightly lit, minimalist office setting. The screen shows complex data visualizations, charts, and tables in a crisp, light-mode corporate aesthetic, utilizing deep blues and pristine whites. The lighting is soft and natural, casting subtle reflections on the desk surface, emphasizing an organized, technically sophisticated workspace." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCnd-d_KG4bAUI0nAHpR9jwWQs5zo3931lEM0vAvWZaEz1_Gcn-exuwTJ3CLkyPy1o0QkXt6PmQCIrQBJXb1xeJSk-WOeA5MnG9egVR3pfQkWhxBPGmu5QBnuuxKVhXZk8Oao9kmntmqm53RUSX4XHJgGpchwjm-cTl-82UCZ9yyJdrvTqSl_6vZC5qjEYfcI9pOTX5WSBAg5LUPqLV-CgZbsSmlNQPMkikaCEwclX2pRelBz6Go9Pv')"></div>
+</div>
+<!-- Content Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Main Content Area -->
+<div class="md:col-span-8 space-y-12">
+<section>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">Problem Background</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-4">
+                        The existing logistics management system relied heavily on manual data entry across disparate spreadsheets, leading to a 15% error rate in inventory tracking and delayed shipment processing. The lack of real-time visibility across regional warehouses caused significant bottlenecks during peak operational hours.
+                    </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                        The objective was to design and implement a centralized, web-based ERP module that seamlessly integrated with the company's legacy accounting software while providing a modernized, intuitive interface for warehouse operators to manage stock movements in real-time.
+                    </p>
+</section>
+<hr class="border-t border-[#F1F5F9]"/>
+<section>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">Key Features</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Feature Card -->
+<div class="p-6 bg-surface-container-lowest border border-outline-variant/30 rounded-lg hover:shadow-[0_4px_12px_rgba(0,91,183,0.05)] transition-shadow">
+<div class="w-12 h-12 rounded bg-primary/10 flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined">sync</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Real-time Synchronization</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Automated data sync between warehouse terminals and the central database, reducing latency to under 2 seconds.</p>
+</div>
+<!-- Feature Card -->
+<div class="p-6 bg-surface-container-lowest border border-outline-variant/30 rounded-lg hover:shadow-[0_4px_12px_rgba(0,91,183,0.05)] transition-shadow">
+<div class="w-12 h-12 rounded bg-primary/10 flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined">analytics</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Predictive Analytics</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Implemented forecasting models to predict inventory depletion rates based on historical seasonal data.</p>
+</div>
+<!-- Feature Card -->
+<div class="p-6 bg-surface-container-lowest border border-outline-variant/30 rounded-lg hover:shadow-[0_4px_12px_rgba(0,91,183,0.05)] transition-shadow">
+<div class="w-12 h-12 rounded bg-primary/10 flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined">security</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Role-Based Access</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Hierarchical security model ensuring data integrity and compliance with internal audit requirements.</p>
+</div>
+<!-- Feature Card -->
+<div class="p-6 bg-surface-container-lowest border border-outline-variant/30 rounded-lg hover:shadow-[0_4px_12px_rgba(0,91,183,0.05)] transition-shadow">
+<div class="w-12 h-12 rounded bg-primary/10 flex items-center justify-center text-primary mb-4">
+<span class="material-symbols-outlined">api</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Legacy Integration</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Custom API middleware connecting the new web platform with existing mainframe accounting systems.</p>
+</div>
+</div>
+</section>
+<hr class="border-t border-[#F1F5F9]"/>
+<section>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-6">Project Gallery</h2>
+<div class="grid grid-cols-2 gap-4">
+<div class="aspect-video bg-surface-container-high rounded border border-outline-variant/30 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A clean, minimalist user interface showing a detailed inventory tracking list. The design features a crisp white background with subtle grey borders, utilizing a structured fixed-grid layout. The typography is highly legible, presenting rows of structured logistical data, part numbers, and status indicators in a corporate, engineered aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBILsgjxkLp6-jV9gxX9ZhsMigy8sW5YwWpH7cxI0nJMSdHczYnpmsWQJqzWBEtUYjH8BOnAnwBl-P51yq_VNgSc5GtPFsESb6wBNgeIfogz2Szb_HF1e94DpK94ppsEIiFF89GGrwZ6b41v8dAHNm_aeoXnbQvUgS1cRdzGBufzPQlp2lFV-8MD65y3b9pXcRNrG8HcycypEk7q7qy1GXEmNXFQyhYB6h7IlCFX7posRquJUdxZROV"/>
+</div>
+<div class="aspect-video bg-surface-container-high rounded border border-outline-variant/30 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A specialized data analytics dashboard focused on supply chain metrics. The screen displays modern, low-contrast bar charts and line graphs against a light surface. Key performance indicators are highlighted in subtle tonal shifts of primary blue. The overall mood is analytical, disciplined, and highly organized, reflecting academic rigor." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjWN1_KQSFO4tdlESjmhdWEX-YQ1Jp3H07qOfy9PRNL9SrC8eGCQQoSm0NdK9YEfSrf9HzJPu46tTxscadoJM5rwBmbVCoCJt0ezycyQp9g3z-btcfCOnBIJINxlkQMd4fkIYqM12PC4R6xaDhlevpy2MNENnXO_oRXUs9COD_m969sof-ZICcAqC-2ANOFr-GWYQcSzrPVRuJsLuRzI3dD7BtJbSjVumvtxBi6MatAUl0ZjZWH6dt"/>
+</div>
+</div>
+</section>
+</div>
+<!-- Sidebar -->
+<div class="md:col-span-4 space-y-8">
+<div class="p-6 bg-surface-container-lowest border border-outline-variant/30 rounded-lg">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-4">Role &amp; Responsibilities</h3>
+<ul class="space-y-3 font-body-md text-body-md text-on-surface">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-[18px] text-primary mr-2 mt-1">check_circle</span>
+<span>Lead Systems Analyst</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-[18px] text-primary mr-2 mt-1">check_circle</span>
+<span>Database Architecture Design</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-[18px] text-primary mr-2 mt-1">check_circle</span>
+<span>Backend API Development</span>
+</li>
+</ul>
+</div>
+<div class="p-6 bg-surface-container-lowest border border-outline-variant/30 rounded-lg">
+<h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase mb-4">Project Details</h3>
+<div class="space-y-4">
+<div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">Duration</div>
+<div class="font-body-md text-body-md text-on-surface">Jan 2023 - May 2023</div>
+</div>
+<div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">Client / Course</div>
+<div class="font-body-md text-body-md text-on-surface">Enterprise Systems Integration (IS401)</div>
+</div>
+<div>
+<div class="font-label-caps text-label-caps text-on-surface-variant mb-1">Status</div>
+<div class="inline-flex items-center px-2 py-0.5 bg-secondary-container/20 text-secondary rounded font-label-code text-label-code">
+                                Completed
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-[80px] border-t border-outline-variant/20 bg-surface-container-low dark:bg-surface-container-low mt-auto">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter grid grid-cols-1 md:grid-cols-2 gap-unit">
+<div class="font-headline-md text-headline-md text-primary">
+                IS Portfolio
+            </div>
+<div class="flex flex-col md:items-end justify-center">
+<div class="flex space-x-6 mb-4">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary dark:hover:text-primary-fixed-dim cursor-pointer transition-opacity hover:opacity-80" href="#">LinkedIn</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary dark:hover:text-primary-fixed-dim cursor-pointer transition-opacity hover:opacity-80" href="#">GitHub</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary dark:hover:text-primary-fixed-dim cursor-pointer transition-opacity hover:opacity-80" href="#">Email</a>
+</div>
+<div class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim text-sm">
+                    © 2024 Information Systems Student | Telkom University
+                </div>
+</div>
+</div>
+</footer>
+</body></html>

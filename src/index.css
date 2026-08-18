@@ -1,74 +1,89 @@
 @import "tailwindcss";
 
-@theme {
-  --color-brand: #3b82f6;
-  --color-brand-deep: #1e3a8a;
-  --color-accent: #00f2ff;
-  --color-accent-strong: #7000ff;
-
-  --font-display: "Space Grotesk", sans-serif;
-  --font-mono: "IBM Plex Mono", monospace;
-
-  --radius-xl: 32px;
-}
-
 @layer base {
   :root {
-    --bg: #000000;
-    --bg-deep: #020617;
-    --bg-night: #000000;
-    --text: #f7f8ff;
-    --muted: #94a3b8;
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-heading: 'Poppins', 'Inter', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Soft Eyestrain-Free Warm Color Palette */
+    --color-vanilla-cream: #FFF6E8;
+    --color-cream-card: #FDF7ED;
+    --color-cream-accent: #FAF0DE;
+    --color-cherry-velvet: #C1121F;
+    --color-sky-powder: #A9C6EA;
+    --color-text-dark: #2B1E19;
+    --color-text-muted: #66554D;
+    --color-border-warm: #E6D4B9;
   }
 
   body {
-    @apply m-0 font-display text-[#f7f8ff] min-h-screen overflow-x-hidden bg-black;
-    background: #000000;
+    font-family: var(--font-sans);
+    background-color: #FFF6E8;
+    color: #2B1E19;
+  }
+
+  /* Poppins Headings */
+  h1, h2, h3, h4, .font-heading, .font-poppins, .font-megion {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1 {
+    font-weight: 900;
   }
 }
 
-.glass-card {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.08));
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  backdrop-filter: blur(16px);
-  box-shadow: 0 24px 60px rgba(8, 10, 56, 0.28);
+/* Custom Utilities for High-Energy Warm Academic Theme */
+.font-poppins, .font-megion {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
 }
 
-.page-grid {
-  @apply fixed inset-0 pointer-events-none opacity-50 z-0;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-    linear-gradient(rgba(203, 255, 156, 0.035) 2px, transparent 2px),
-    linear-gradient(90deg, rgba(203, 255, 156, 0.035) 2px, transparent 2px);
-  background-size: 56px 56px, 56px 56px, 224px 224px, 224px 224px;
+.font-mono-code {
+  font-family: var(--font-mono);
 }
 
-.section-kicker {
-  @apply font-mono text-[0.84rem] text-white/80 uppercase tracking-widest;
+.bg-surface {
+  background-color: #FFF6E8;
 }
 
-.button-primary {
-  @apply inline-flex items-center justify-center min-w-[170px] px-6 py-4 rounded-full font-bold text-black bg-accent shadow-[0_18px_36px_rgba(203,255,156,0.22)] transition-all hover:-translate-y-1;
+.bg-surface-card {
+  background-color: #FDF7ED;
 }
 
-.button-ghost {
-  @apply inline-flex items-center justify-center min-w-[170px] px-6 py-4 rounded-full font-bold text-white bg-white/10 border border-white/20 transition-all hover:-translate-y-1;
+.border-slate-subtle {
+  border-color: #E6D4B9;
+}
+
+.hover-card-glow {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-card-glow:hover {
+  border-color: #C1121F;
+  box-shadow: 0 10px 25px -5px rgba(193, 18, 31, 0.12), 0 8px 10px -6px rgba(193, 18, 31, 0.08);
+  transform: translateY(-2px);
 }
 
 .custom-scrollbar::-webkit-scrollbar {
   width: 6px;
+  height: 6px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: transparent;
+  background: #FAF0DE;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+  background: #A9C6EA;
   border-radius: 999px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: #84a8d4;
 }

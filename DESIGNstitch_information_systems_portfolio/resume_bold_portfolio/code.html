@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Resume - IS Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-surface": "#131b2e",
+                "on-surface-variant": "#434656",
+                "surface-dim": "#d2d9f4",
+                "on-tertiary-fixed-variant": "#2f2ebe",
+                "primary-fixed": "#dde1ff",
+                "on-secondary-fixed": "#001e2b",
+                "on-tertiary": "#ffffff",
+                "on-primary-fixed": "#001452",
+                "secondary-fixed": "#c2e8ff",
+                "primary-fixed-dim": "#b7c4ff",
+                "surface-base": "#F8FAFC",
+                "error-container": "#ffdad6",
+                "inverse-primary": "#b7c4ff",
+                "on-secondary-fixed-variant": "#004d67",
+                "secondary": "#006688",
+                "on-secondary-container": "#004b65",
+                "surface-container-low": "#f2f3ff",
+                "surface": "#faf8ff",
+                "deep-indigo": "#4338CA",
+                "on-primary": "#ffffff",
+                "inverse-surface": "#283044",
+                "inverse-on-surface": "#eef0ff",
+                "surface-container-lowest": "#ffffff",
+                "surface-tint": "#004ced",
+                "on-tertiary-container": "#e3e2ff",
+                "status-warning": "#F59E0B",
+                "tertiary-fixed": "#e1e0ff",
+                "surface-container": "#eaedff",
+                "surface-container-high": "#e2e7ff",
+                "tertiary-container": "#5153de",
+                "tertiary": "#3737c5",
+                "surface-card": "#FFFFFF",
+                "secondary-container": "#00c1fd",
+                "vibrant-blue": "#0052FF",
+                "primary-container": "#0052ff",
+                "status-success": "#10B981",
+                "on-tertiary-fixed": "#07006c",
+                "outline-variant": "#c3c5d9",
+                "on-error": "#ffffff",
+                "primary": "#003ec7",
+                "surface-container-highest": "#dae2fd",
+                "background": "#faf8ff",
+                "surface-variant": "#dae2fd",
+                "on-secondary": "#ffffff",
+                "secondary-fixed-dim": "#75d1ff",
+                "electric-cyan": "#00C2FF",
+                "status-error": "#EF4444",
+                "on-primary-container": "#dfe3ff",
+                "surface-bright": "#faf8ff",
+                "on-primary-fixed-variant": "#0038b6",
+                "outline": "#737688",
+                "error": "#ba1a1a",
+                "on-error-container": "#93000a",
+                "tertiary-fixed-dim": "#c0c1ff",
+                "on-background": "#131b2e"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "gutter": "24px",
+                "unit": "8px",
+                "margin-mobile": "20px",
+                "section-gap": "80px",
+                "container-max": "1280px"
+        },
+        "fontFamily": {
+                "body-lg": [
+                        "Inter"
+                ],
+                "headline-lg-mobile": [
+                        "Inter"
+                ],
+                "headline-lg": [
+                        "Inter"
+                ],
+                "headline-md": [
+                        "Inter"
+                ],
+                "label-code": [
+                        "JetBrains Mono"
+                ],
+                "label-caps": [
+                        "Inter"
+                ],
+                "display": [
+                        "Inter"
+                ],
+                "body-md": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "28px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "1.3",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-code": [
+                        "13px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "500"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "1.0",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "display": [
+                        "56px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.04em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.5",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased selection:bg-primary/20 selection:text-primary">
+<!-- TopNavBar -->
+<nav class="bg-surface/80 dark:bg-surface/80 backdrop-blur-md fixed top-0 w-full z-50 border-b border-outline-variant/30">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter flex justify-between items-center h-16">
+<a class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim font-bold tracking-tight" href="#">IS Portfolio</a>
+<div class="hidden md:flex space-x-8 items-center">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">About Me</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Projects</a>
+<a class="font-body-md text-body-md text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 active:scale-95 duration-150" href="#">Resume</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors" href="#">Contact</a>
+</div>
+<button class="hidden md:inline-flex bg-primary-container text-on-primary font-label-caps text-label-caps px-6 py-3 rounded hover:bg-primary-container/90 transition-colors active:scale-95 duration-150 uppercase tracking-widest items-center justify-center min-h-[48px] min-w-[48px]">
+                Hire Me
+            </button>
+<!-- Mobile Menu Button (Icon) -->
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-gutter pt-32 pb-section-gap grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Header / Title -->
+<div class="col-span-1 lg:col-span-12 mb-12 flex flex-col md:flex-row md:items-end md:justify-between gap-6 border-b border-surface-variant pb-8">
+<div>
+<h1 class="font-display text-display text-on-background mb-4">Curriculum Vitae</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">A comprehensive overview of my academic background, technical proficiencies, and professional experience in Information Systems.</p>
+</div>
+<a class="inline-flex items-center justify-center gap-2 bg-primary-container text-on-primary font-label-caps text-label-caps px-6 py-4 rounded hover:bg-primary-container/90 transition-colors active:scale-95 duration-150 uppercase tracking-widest min-h-[48px]" href="#">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+                Download PDF
+            </a>
+</div>
+<!-- Left Column: Highlights (Experience & Education) -->
+<div class="col-span-1 lg:col-span-4 space-y-12 pr-0 lg:pr-8">
+<!-- Experience Summary -->
+<section>
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="work" data-weight="fill" style="font-variation-settings: 'FILL' 1;">work</span>
+<h2 class="font-headline-md text-headline-md text-on-background">Experience</h2>
+</div>
+<div class="space-y-8 relative before:absolute before:inset-0 before:ml-2.5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-surface-variant before:to-transparent">
+<div class="relative flex items-start justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+<div class="flex items-center justify-center w-6 h-6 rounded-full border-2 border-primary bg-surface absolute left-0 md:left-1/2 -translate-x-1/2 z-10 text-surface">
+<div class="w-2 h-2 rounded-full bg-primary"></div>
+</div>
+<div class="w-[calc(100%-3rem)] md:w-[calc(50%-2rem)] pl-4 md:pl-0 md:pr-4 text-left md:text-right">
+<h3 class="font-headline-md text-body-md font-bold text-on-background">Data Analyst Intern</h3>
+<div class="font-body-md text-body-md text-on-surface-variant mb-1">TechCorp Indonesia</div>
+<time class="font-label-caps text-label-caps text-secondary tracking-widest block mb-2">Jun 2023 - Aug 2023</time>
+</div>
+</div>
+<div class="relative flex items-start justify-between md:justify-normal md:odd:flex-row-reverse group">
+<div class="flex items-center justify-center w-6 h-6 rounded-full border-2 border-surface-variant bg-surface absolute left-0 md:left-1/2 -translate-x-1/2 z-10 text-surface"></div>
+<div class="w-[calc(100%-3rem)] md:w-[calc(50%-2rem)] pl-4 md:pl-0 md:text-left md:ml-auto">
+<h3 class="font-headline-md text-body-md font-bold text-on-background">IT Support Assistant</h3>
+<div class="font-body-md text-body-md text-on-surface-variant mb-1">University Lab</div>
+<time class="font-label-caps text-label-caps text-outline tracking-widest block mb-2">Sep 2022 - May 2023</time>
+</div>
+</div>
+</div>
+</section>
+<!-- Education Summary -->
+<section>
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="school" data-weight="fill" style="font-variation-settings: 'FILL' 1;">school</span>
+<h2 class="font-headline-md text-headline-md text-on-background">Education</h2>
+</div>
+<div class="bg-surface-container-lowest border border-outline-variant/50 rounded-lg p-6 shadow-sm">
+<h3 class="font-headline-md text-headline-md text-on-background mb-1">B.S. Information Systems</h3>
+<div class="font-body-md text-body-md text-on-surface-variant mb-4">Telkom University</div>
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-secondary text-[16px]" data-icon="calendar_today">calendar_today</span>
+<span class="font-label-code text-label-code text-on-surface-variant">2020 - 2024 (Expected)</span>
+</div>
+<div class="bg-primary/5 rounded p-3 border border-primary/10 mb-4">
+<span class="font-label-caps text-label-caps text-primary uppercase block mb-1">Current GPA</span>
+<span class="font-headline-md text-headline-md text-on-background">3.85 / 4.00</span>
+</div>
+<ul class="space-y-2">
+<li class="flex items-start gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
+<span class="font-body-md text-body-md text-on-surface-variant">Dean's List 2021-2023</span>
+</li>
+<li class="flex items-start gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
+<span class="font-body-md text-body-md text-on-surface-variant">Vice President, IS Student Union</span>
+</li>
+</ul>
+</div>
+</section>
+<!-- Technical Skills -->
+<section>
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-primary" data-icon="terminal" data-weight="fill" style="font-variation-settings: 'FILL' 1;">terminal</span>
+<h2 class="font-headline-md text-headline-md text-on-background">Core Skills</h2>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="bg-secondary-container/20 text-secondary border border-secondary/20 px-3 py-1.5 rounded font-label-code text-label-code">Python</span>
+<span class="bg-secondary-container/20 text-secondary border border-secondary/20 px-3 py-1.5 rounded font-label-code text-label-code">SQL</span>
+<span class="bg-secondary-container/20 text-secondary border border-secondary/20 px-3 py-1.5 rounded font-label-code text-label-code">Tableau</span>
+<span class="bg-secondary-container/20 text-secondary border border-secondary/20 px-3 py-1.5 rounded font-label-code text-label-code">UML Modeling</span>
+<span class="bg-secondary-container/20 text-secondary border border-secondary/20 px-3 py-1.5 rounded font-label-code text-label-code">Agile/Scrum</span>
+<span class="bg-secondary-container/20 text-secondary border border-secondary/20 px-3 py-1.5 rounded font-label-code text-label-code">Figma</span>
+<span class="bg-secondary-container/20 text-secondary border border-secondary/20 px-3 py-1.5 rounded font-label-code text-label-code">Enterprise Architecture</span>
+</div>
+</section>
+</div>
+<!-- Right Column: Document Preview Area -->
+<div class="col-span-1 lg:col-span-8">
+<div class="bg-surface-container-high rounded-xl p-4 md:p-8 border border-outline-variant/30 flex justify-center sticky top-24 shadow-[inset_0_2px_10px_rgba(0,0,0,0.02)]">
+<!-- The "Paper" Document Preview -->
+<div class="bg-surface-container-lowest w-full max-w-[800px] aspect-[1/1.414] shadow-[0_4px_24px_rgba(0,0,0,0.06)] border border-outline-variant/20 rounded p-8 md:p-12 overflow-hidden relative group transition-transform duration-300 hover:shadow-[0_8px_32px_rgba(0,91,183,0.08)]">
+<!-- Blur Overlay on Hover to emphasize download -->
+<div class="absolute inset-0 bg-surface/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center z-20">
+<button class="inline-flex items-center gap-2 bg-on-background text-surface font-label-caps text-label-caps px-6 py-3 rounded shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 uppercase tracking-widest min-h-[48px]">
+<span class="material-symbols-outlined text-[18px]" data-icon="open_in_new">open_in_new</span>
+                            View Full Screen
+                        </button>
+</div>
+<!-- Mock Document Content -->
+<div class="h-full flex flex-col pointer-events-none select-none opacity-80 filter grayscale-[20%]">
+<!-- Doc Header -->
+<div class="border-b-2 border-primary pb-6 mb-6">
+<h1 class="font-headline-lg text-headline-lg text-on-background tracking-tight mb-2 uppercase">Jane Doe</h1>
+<p class="font-body-md text-body-md text-secondary tracking-widest uppercase text-sm mb-4">Information Systems Specialist</p>
+<div class="flex gap-4 text-xs font-label-code text-outline">
+<span>jane.doe@example.com</span>
+<span>|</span>
+<span>+62 812 3456 7890</span>
+<span>|</span>
+<span>Bandung, Indonesia</span>
+</div>
+</div>
+<!-- Doc Body -->
+<div class="flex-1 grid grid-cols-3 gap-8">
+<!-- Main Column -->
+<div class="col-span-2 space-y-8">
+<div>
+<h2 class="font-label-caps text-label-caps text-primary uppercase border-b border-surface-variant pb-2 mb-4 tracking-widest">Professional Summary</h2>
+<div class="space-y-2">
+<div class="h-2 bg-surface-variant rounded w-full"></div>
+<div class="h-2 bg-surface-variant rounded w-11/12"></div>
+<div class="h-2 bg-surface-variant rounded w-full"></div>
+<div class="h-2 bg-surface-variant rounded w-4/5"></div>
+</div>
+</div>
+<div>
+<h2 class="font-label-caps text-label-caps text-primary uppercase border-b border-surface-variant pb-2 mb-4 tracking-widest">Experience</h2>
+<div class="mb-6">
+<div class="flex justify-between items-baseline mb-2">
+<div class="h-3 bg-tertiary-container rounded w-1/2"></div>
+<div class="h-2 bg-outline-variant rounded w-1/4"></div>
+</div>
+<div class="space-y-2 pl-4 border-l-2 border-surface-variant">
+<div class="h-2 bg-surface-variant rounded w-full"></div>
+<div class="h-2 bg-surface-variant rounded w-5/6"></div>
+<div class="h-2 bg-surface-variant rounded w-11/12"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-baseline mb-2">
+<div class="h-3 bg-tertiary-container rounded w-2/5"></div>
+<div class="h-2 bg-outline-variant rounded w-1/4"></div>
+</div>
+<div class="space-y-2 pl-4 border-l-2 border-surface-variant">
+<div class="h-2 bg-surface-variant rounded w-full"></div>
+<div class="h-2 bg-surface-variant rounded w-4/5"></div>
+</div>
+</div>
+</div>
+<div>
+<h2 class="font-label-caps text-label-caps text-primary uppercase border-b border-surface-variant pb-2 mb-4 tracking-widest">Projects</h2>
+<div class="mb-4">
+<div class="h-3 bg-tertiary-container rounded w-1/3 mb-2"></div>
+<div class="h-2 bg-surface-variant rounded w-full"></div>
+</div>
+<div>
+<div class="h-3 bg-tertiary-container rounded w-2/5 mb-2"></div>
+<div class="h-2 bg-surface-variant rounded w-11/12"></div>
+</div>
+</div>
+</div>
+<!-- Side Column -->
+<div class="col-span-1 space-y-8">
+<div>
+<h2 class="font-label-caps text-label-caps text-primary uppercase border-b border-surface-variant pb-2 mb-4 tracking-widest">Education</h2>
+<div class="h-3 bg-tertiary-container rounded w-full mb-2"></div>
+<div class="h-2 bg-outline-variant rounded w-1/2 mb-4"></div>
+<div class="h-2 bg-surface-variant rounded w-3/4 mb-1"></div>
+<div class="h-2 bg-surface-variant rounded w-2/3"></div>
+</div>
+<div>
+<h2 class="font-label-caps text-label-caps text-primary uppercase border-b border-surface-variant pb-2 mb-4 tracking-widest">Skills</h2>
+<div class="flex flex-wrap gap-2">
+<div class="h-4 w-12 bg-surface-variant rounded"></div>
+<div class="h-4 w-16 bg-surface-variant rounded"></div>
+<div class="h-4 w-10 bg-surface-variant rounded"></div>
+<div class="h-4 w-14 bg-surface-variant rounded"></div>
+<div class="h-4 w-20 bg-surface-variant rounded"></div>
+<div class="h-4 w-12 bg-surface-variant rounded"></div>
+</div>
+</div>
+<div>
+<h2 class="font-label-caps text-label-caps text-primary uppercase border-b border-surface-variant pb-2 mb-4 tracking-widest">Certifications</h2>
+<div class="space-y-3">
+<div class="h-2 bg-surface-variant rounded w-full"></div>
+<div class="h-2 bg-surface-variant rounded w-5/6"></div>
+<div class="h-2 bg-surface-variant rounded w-11/12"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-low border-t border-outline-variant/20 w-full py-section-gap">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter grid grid-cols-1 md:grid-cols-2 gap-unit">
+<div class="flex flex-col gap-4">
+<span class="font-headline-md text-headline-md text-primary">IS Portfolio</span>
+<p class="font-body-md text-body-md text-secondary dark:text-secondary-fixed-dim">
+                    © 2024 Information Systems Student | Telkom University
+                </p>
+</div>
+<div class="flex flex-wrap gap-6 md:justify-end items-start mt-4 md:mt-0">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary dark:hover:text-primary-fixed-dim cursor-pointer transition-opacity hover:opacity-80" href="#">LinkedIn</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary dark:hover:text-primary-fixed-dim cursor-pointer transition-opacity hover:opacity-80" href="#">GitHub</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary dark:hover:text-primary-fixed-dim cursor-pointer transition-opacity hover:opacity-80" href="#">Email</a>
+</div>
+</div>
+</footer>
+</body></html>

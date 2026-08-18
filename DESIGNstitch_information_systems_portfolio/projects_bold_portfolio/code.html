@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Projects - IS Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-surface": "#131b2e",
+                "on-surface-variant": "#434656",
+                "surface-dim": "#d2d9f4",
+                "on-tertiary-fixed-variant": "#2f2ebe",
+                "primary-fixed": "#dde1ff",
+                "on-secondary-fixed": "#001e2b",
+                "on-tertiary": "#ffffff",
+                "on-primary-fixed": "#001452",
+                "secondary-fixed": "#c2e8ff",
+                "primary-fixed-dim": "#b7c4ff",
+                "surface-base": "#F8FAFC",
+                "error-container": "#ffdad6",
+                "inverse-primary": "#b7c4ff",
+                "on-secondary-fixed-variant": "#004d67",
+                "secondary": "#006688",
+                "on-secondary-container": "#004b65",
+                "surface-container-low": "#f2f3ff",
+                "surface": "#faf8ff",
+                "deep-indigo": "#4338CA",
+                "on-primary": "#ffffff",
+                "inverse-surface": "#283044",
+                "inverse-on-surface": "#eef0ff",
+                "surface-container-lowest": "#ffffff",
+                "surface-tint": "#004ced",
+                "on-tertiary-container": "#e3e2ff",
+                "status-warning": "#F59E0B",
+                "tertiary-fixed": "#e1e0ff",
+                "surface-container": "#eaedff",
+                "surface-container-high": "#e2e7ff",
+                "tertiary-container": "#5153de",
+                "tertiary": "#3737c5",
+                "surface-card": "#FFFFFF",
+                "secondary-container": "#00c1fd",
+                "vibrant-blue": "#0052FF",
+                "primary-container": "#0052ff",
+                "status-success": "#10B981",
+                "on-tertiary-fixed": "#07006c",
+                "outline-variant": "#c3c5d9",
+                "on-error": "#ffffff",
+                "primary": "#003ec7",
+                "surface-container-highest": "#dae2fd",
+                "background": "#faf8ff",
+                "surface-variant": "#dae2fd",
+                "on-secondary": "#ffffff",
+                "secondary-fixed-dim": "#75d1ff",
+                "electric-cyan": "#00C2FF",
+                "status-error": "#EF4444",
+                "on-primary-container": "#dfe3ff",
+                "surface-bright": "#faf8ff",
+                "on-primary-fixed-variant": "#0038b6",
+                "outline": "#737688",
+                "error": "#ba1a1a",
+                "on-error-container": "#93000a",
+                "tertiary-fixed-dim": "#c0c1ff",
+                "on-background": "#131b2e"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.125rem",
+                "lg": "0.25rem",
+                "xl": "0.5rem",
+                "full": "0.75rem"
+        },
+        "spacing": {
+                "gutter": "24px",
+                "unit": "8px",
+                "margin-mobile": "20px",
+                "container-max": "1280px"
+        },
+        "fontFamily": {
+                "body-lg": [
+                        "Inter"
+                ],
+                "headline-lg-mobile": [
+                        "Inter"
+                ],
+                "headline-lg": [
+                        "Inter"
+                ],
+                "headline-md": [
+                        "Inter"
+                ],
+                "label-code": [
+                        "JetBrains Mono"
+                ],
+                "label-caps": [
+                        "Inter"
+                ],
+                "display": [
+                        "Inter"
+                ],
+                "body-md": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "1.6",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "28px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-lg": [
+                        "32px",
+                        {
+                                "lineHeight": "1.2",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-md": [
+                        "24px",
+                        {
+                                "lineHeight": "1.3",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-code": [
+                        "13px",
+                        {
+                                "lineHeight": "1.2",
+                                "fontWeight": "500"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "1.0",
+                                "letterSpacing": "0.1em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "display": [
+                        "56px",
+                        {
+                                "lineHeight": "1.1",
+                                "letterSpacing": "-0.04em",
+                                "fontWeight": "800"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "1.5",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+</head>
+<body class="bg-background text-on-background antialiased min-h-screen flex flex-col pt-16">
+<!-- TopNavBar -->
+<nav class="bg-surface/80 dark:bg-surface/80 backdrop-blur-md fixed top-0 w-full z-50 border-b border-outline-variant/30 flat no shadows">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter flex justify-between items-center h-16">
+<div class="font-headline-md text-headline-md text-primary dark:text-primary-fixed-dim font-bold">
+                IS Portfolio
+            </div>
+<div class="hidden md:flex space-x-gutter items-center font-body-md text-body-md">
+<a class="text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors active:scale-95 duration-150" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors active:scale-95 duration-150" href="#">About Me</a>
+<a class="text-primary dark:text-primary-fixed-dim border-b-2 border-primary dark:border-primary-fixed-dim pb-1 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors active:scale-95 duration-150" href="#">Projects</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors active:scale-95 duration-150" href="#">Resume</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant/80 hover:text-primary dark:hover:text-primary-fixed-dim transition-colors active:scale-95 duration-150" href="#">Contact</a>
+</div>
+<button class="bg-primary-container text-on-primary font-body-md text-body-md px-4 py-2 rounded-lg hover:bg-primary transition-colors active:scale-95 duration-150 hidden md:block">
+                Hire Me
+            </button>
+<button class="md:hidden text-on-surface-variant p-2">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow max-w-container-max mx-auto w-full px-margin-mobile md:px-gutter py-20">
+<!-- Page Header -->
+<header class="mb-12">
+<h1 class="font-display text-display text-on-background mb-4">Projects / Works</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                A curated selection of academic projects and technical implementations demonstrating proficiency in information systems, data analysis, and software development.
+            </p>
+</header>
+<!-- Filters -->
+<div class="flex flex-wrap gap-2 mb-12 border-b border-outline-variant/30 pb-4">
+<button class="px-4 py-2 bg-primary-container text-on-primary rounded-full font-label-caps text-label-caps tracking-wider transition-colors">ALL</button>
+<button class="px-4 py-2 bg-surface text-on-surface-variant border border-outline-variant/50 hover:border-primary hover:text-primary rounded-full font-label-caps text-label-caps tracking-wider transition-colors">WEB DEV</button>
+<button class="px-4 py-2 bg-surface text-on-surface-variant border border-outline-variant/50 hover:border-primary hover:text-primary rounded-full font-label-caps text-label-caps tracking-wider transition-colors">DATABASE</button>
+<button class="px-4 py-2 bg-surface text-on-surface-variant border border-outline-variant/50 hover:border-primary hover:text-primary rounded-full font-label-caps text-label-caps tracking-wider transition-colors">ANALYSIS</button>
+<button class="px-4 py-2 bg-surface text-on-surface-variant border border-outline-variant/50 hover:border-primary hover:text-primary rounded-full font-label-caps text-label-caps tracking-wider transition-colors">SYSTEM DESIGN</button>
+</div>
+<!-- Project Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1: APSI -->
+<article class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden hover:shadow-[0px_4px_12px_rgba(0,82,255,0.1)] transition-shadow duration-300 flex flex-col group">
+<div class="h-48 relative overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A modern software dashboard interface displayed on a sleek laptop screen. The design is clean, minimalist, and corporate, emphasizing data visualization with subtle blue charts and clean white backgrounds. The lighting is bright and even, highlighting the technical nature of the project. The overall mood is professional and academic, representing an Information Systems project." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfPZgMsMtKkSTq2GzTXnUPAnd9VV2qSWBRCtAg75y73dyXkJrHsgSJac5CJSMbhNTq6dJNeDQQMGZoAowiL0enaFRIrPgEABsTmbWuxMrSU_blJ5SztTaiYRIFpZFF02seLQC9-053JmMX-EQlNkHGeZwonLhss01A0v56Vs21q921aYV7QEm-y-byEUulsg3DPaMpzmSeF7gLFpaRv1cvWGLczhWWCqxy87e5SN3e_2IxvYrUdAJ9"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full font-label-caps text-label-caps text-primary border border-primary/20">
+                        SYSTEM DESIGN
+                    </div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-background mb-2">APSI: Enterprise Architecture Redesign</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                        A comprehensive analysis and redesign of enterprise information systems architecture focusing on process optimization and alignment with strategic business goals.
+                    </p>
+<div class="flex flex-wrap gap-2 mt-auto">
+<span class="bg-surface-container text-primary px-2 py-1 rounded font-label-code text-label-code border border-primary/20">UML</span>
+<span class="bg-surface-container text-primary px-2 py-1 rounded font-label-code text-label-code border border-primary/20">BPMN</span>
+<span class="bg-surface-container text-primary px-2 py-1 rounded font-label-code text-label-code border border-primary/20">Enterprise Arch</span>
+</div>
+</div>
+</article>
+<!-- Card 2: Infratrack -->
+<article class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden hover:shadow-[0px_4px_12px_rgba(0,82,255,0.1)] transition-shadow duration-300 flex flex-col group">
+<div class="h-48 relative overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A minimalist network topology diagram displayed on a modern monitor. Connecting nodes glow with a subtle primary blue hue against a clean, light surface background. The visual style is highly structured, geometric, and precise, conveying infrastructure monitoring. The mood is analytical and technically focused, fitting an academic portfolio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuoeTBxvtCXpEK79hTBg_xNm7gbMHFEgpga2wvZSQWEI4Imz0uljoFaeTJwA6e3S6GrGgFA3oQsiBDMXDfHlog_yz02u5NanKsisMwC1Bg7JDI9bh8miTw6Xha-PbOLyj8LltAz5jvW7E32CMa5quPylS8-ZdtoxAptmfBgKAnO7d5Qs3h5nBngCVY8btWof3mLwEqJ4ZbQq9Fpd5FfCpwQDnW_n9dpMzbVMRX9JsuQ2_0TUbLHceA"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full font-label-caps text-label-caps text-primary border border-primary/20">
+                        WEB DEV
+                    </div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-background mb-2">Infratrack: IT Asset Management</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                        Developed a web-based infrastructure tracking system to monitor hardware lifecycles, network topologies, and maintenance schedules across campus facilities.
+                    </p>
+<div class="flex flex-wrap gap-2 mt-auto">
+<span class="bg-surface-container text-primary px-2 py-1 rounded font-label-code text-label-code border border-primary/20">React</span>
+<span class="bg-surface-container text-primary px-2 py-1 rounded font-label-code text-label-code border border-primary/20">Node.js</span>
+<span class="bg-surface-container text-primary px-2 py-1 rounded font-label-code text-label-code border border-primary/20">REST API</span>
+</div>
+</div>
+</article>
+<!-- Card 3: DWBI -->
+<article class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden hover:shadow-[0px_4px_12px_rgba(0,82,255,0.1)] transition-shadow duration-300 flex flex-col group">
+<div class="h-48 relative overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Abstract representation of data warehousing. Cubes of data interlocking in a bright, modern, white studio setting. Strategic use of deep blacks, pristine whites, and primary blue accents. The visual conveys organization, ETL processes, and analytical rigor. The lighting is soft but directional, highlighting the geometric precision of the data structures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC91KbNMdoOcU3-FF46yBVwswx1MTQzmDvudg7pIq9cF28dF3dY8mcL2eGie1qq-H6B0gPGI85zq4G8vyT7mWhXnTo9In_WbsqZu0rBcvn8bHnAh9xVJVVesVBDxrH4TSpx77Iz4ODtC7LYvmZ7nw7E3GLb27XMSZGC7Es5zs432sBJq90RvFnD7C1TTBhdvPNa5Vg-zc4Zlvyd_xB2ULTzLO5vV9zVM2PHT9omz4iLIeyMRCsb-xZ5"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full font-label-caps text-label-caps text-primary border border-primary/20">
+                        DATABASE
+                    </div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-background mb-2">DWBI: Sales Data Warehouse</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                        Designed and implemented a star-schema data warehouse for a retail dataset, including ETL pipelines and interactive PowerBI dashboards for business intelligence.
+                    </p>
+<div class="flex flex-wrap gap-2 mt-auto">
+<span class="bg-surface-container text-primary px-2 py-1 rounded font-label-code text-label-code border border-primary/20">SQL Server</span>
+<span class="bg-surface-container text-primary px-2 py-1 rounded font-label-code text-label-code border border-primary/20">SSIS</span>
+<span class="bg-surface-container text-primary px-2 py-1 rounded font-label-code text-label-code border border-primary/20">PowerBI</span>
+</div>
+</div>
+</article>
+<!-- Card 4: PAW -->
+<article class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden hover:shadow-[0px_4px_12px_rgba(0,82,255,0.1)] transition-shadow duration-300 flex flex-col group">
+<div class="h-48 relative overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up of clean, well-indented code on a light-themed code editor. The syntax highlighting uses muted blues and teals, adhering to the minimalist, corporate aesthetic of the portfolio. The image is crisp, focusing on backend logic and modern web application development. The mood is academic, focused, and precise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZw5nJEBTobJziQ2KEoHy0TuTU-pqdJS9fEPO9jQdaRxPkSWU3zvSUsqK63eHNHJ9BvPOsd4qklRzsWpN7knwGFcwwl92jxZLUgVCkQrt9nQF7NHd6i5U7MAWniKOgZRUbcR8SFNosaV-ZXwb_2Mw3JgOUF1Rcqw09_ud1QeVoyW1lSjj2nFc1JnNDtkDkEJYQzsIvvzHRCbJ0Xb4v9vRo7sDj7If5lpSIrk9jfYRHljJre_ncLmCT"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full font-label-caps text-label-caps text-primary border border-primary/20">
+                        WEB DEV
+                    </div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-background mb-2">PAW: Academic Portal</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                        A full-stack web application developed for the Web Application Programming course, featuring user authentication, course registration, and grade tracking.
+                    </p>
+<div class="flex flex-wrap gap-2 mt-auto">
+<span class="bg-surface-container text-primary px-2 py-1 rounded font-label-code text-label-code border border-primary/20">Laravel</span>
+<span class="bg-surface-container text-primary px-2 py-1 rounded font-label-code text-label-code border border-primary/20">Vue.js</span>
+<span class="bg-surface-container text-primary px-2 py-1 rounded font-label-code text-label-code border border-primary/20">MySQL</span>
+</div>
+</div>
+</article>
+<!-- Card 5: Manpro -->
+<article class="bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden hover:shadow-[0px_4px_12px_rgba(0,82,255,0.1)] transition-shadow duration-300 flex flex-col group">
+<div class="h-48 relative overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A clean, structured Gantt chart interface shown on a tablet device. The visual elements are neat and highly organized, using primary blue tones to indicate project timelines. The surrounding environment is a stark, minimal workspace. The image conveys project management, discipline, and methodology in a modern corporate style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBwCvOROKZ2P1j33M07cO5lwq44dPGWLnrPbBBCRvnuGpdm4yUUkHoIPkxg5QSCFubbwTbNjm8dy1xkfwHz0BTfJOgouETdYLQ-yMHJHtE_i_f9gm7AS4ftj8MncW8oGFy6Wl1_gJ4e_-9KpOd7YkwJQC1tmn18QYLZ5DFbWyfnfpAS0M1h3Hx2dbiHbxwJdLag40eYVBmvW-L8VH2XaTatIJ6oAw04vCRF-KBvocxWhbSSx29VsV-"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur-sm px-3 py-1 rounded-full font-label-caps text-label-caps text-primary border border-primary/20">
+                        ANALYSIS
+                    </div>
+</div>
+<div class="p-6 flex flex-col flex-grow">
+<h3 class="font-headline-md text-headline-md text-on-background mb-2">Manpro: Agile Implementation</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6 flex-grow">
+                        Project Management coursework focused on implementing Agile Scrum methodologies for a simulated software development lifecycle, complete with sprint planning and risk analysis.
+                    </p>
+<div class="flex flex-wrap gap-2 mt-auto">
+<span class="bg-surface-container text-primary px-2 py-1 rounded font-label-code text-label-code border border-primary/20">Jira</span>
+<span class="bg-surface-container text-primary px-2 py-1 rounded font-label-code text-label-code border border-primary/20">Scrum</span>
+<span class="bg-surface-container text-primary px-2 py-1 rounded font-label-code text-label-code border border-primary/20">Risk Analysis</span>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-low w-full py-20 border-t border-outline-variant/20 flat no shadows mt-auto">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-gutter grid grid-cols-1 md:grid-cols-2 gap-2">
+<div class="flex flex-col gap-4">
+<div class="font-headline-md text-headline-md text-primary">IS Portfolio</div>
+<div class="font-body-md text-body-md text-on-surface-variant dark:text-on-surface-variant/70">
+                    © 2024 Information Systems Student | Telkom University
+                </div>
+</div>
+<div class="flex md:justify-end gap-gutter font-body-md text-body-md">
+<a class="text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary dark:hover:text-primary-fixed-dim cursor-pointer transition-opacity hover:opacity-80" href="#">LinkedIn</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary dark:hover:text-primary-fixed-dim cursor-pointer transition-opacity hover:opacity-80" href="#">GitHub</a>
+<a class="text-on-surface-variant dark:text-on-surface-variant/70 hover:text-primary dark:hover:text-primary-fixed-dim cursor-pointer transition-opacity hover:opacity-80" href="#">Email</a>
+</div>
+</div>
+</footer>
+</body></html>
